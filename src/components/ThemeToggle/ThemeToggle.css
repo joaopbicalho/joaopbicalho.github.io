@@ -1,0 +1,81 @@
+.theme-toggle {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  height: 30px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.toggle-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.toggle-slider.dark {
+  background: linear-gradient(45deg, #2a2a3e, #3a3a4e);
+}
+
+.toggle-slider.light {
+  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+}
+
+.toggle-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(243, 156, 18, 0.4);
+}
+
+.toggle-slider.dark .toggle-icon {
+  left: 4px;
+}
+
+.toggle-slider.light .toggle-icon {
+  left: calc(100% - 26px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 26px;
+  }
+  
+  .toggle-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 0.6rem;
+  }
+  
+  .toggle-slider.light .toggle-icon {
+    left: calc(100% - 22px);
+  }
+}

@@ -1,0 +1,223 @@
+/* Muon Lifetime Project Styles */
+.project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #00d4ff;
+}
+
+.project-header h1 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.project-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.project-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.project-section h2 {
+  color: #00d4ff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.project-section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.project-section ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.project-section li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.project-section li strong {
+  color: #00d4ff;
+}
+
+.equation-box {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.equation-box p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.equation-box p:first-child {
+  font-weight: bold;
+  color: #00d4ff;
+}
+
+.equipment-overview {
+  margin: 2rem 0;
+}
+
+.equipment-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.equipment-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+}
+
+.results-placeholder {
+  margin-top: 2rem;
+}
+
+.results-placeholder h3 {
+  color: #00d4ff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.results-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.results-image {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+}
+
+.report-link-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.report-link {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.report-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+  background: linear-gradient(135deg, #0099cc 0%, #00d4ff 100%);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 1rem;
+  }
+
+  .project-header h1 {
+    font-size: 2rem;
+  }
+
+  .project-section {
+    padding: 1.5rem;
+  }
+
+  .project-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .equipment-image {
+    max-width: 95%;
+  }
+
+  .results-image {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .project-section {
+    padding: 1rem;
+  }
+
+  .equipment-image {
+    max-width: 100%;
+  }
+
+  .results-image {
+    max-width: 100%;
+  }
+}
