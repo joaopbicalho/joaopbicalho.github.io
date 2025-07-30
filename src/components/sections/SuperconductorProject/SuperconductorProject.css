@@ -1,0 +1,263 @@
+/* High-Tc Superconductor Project Styles */
+
+.project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #111111 0%, #1c1c2e 50%, #121b34 100%);
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #33ccff;
+}
+
+.project-header h1 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #33ccff 0%, #007acc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.project-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.project-section {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(51, 204, 255, 0.2);
+  animation: fadeInUp 0.6s ease-out forwards;
+  overflow-x: hidden;
+}
+
+.project-section h2 {
+  color: #33ccff;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-section p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.project-section ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.project-section li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.equation-box {
+  background: rgba(51, 204, 255, 0.1);
+  border: 1px solid #33ccff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.equation-box p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.equation-box p:first-child {
+  font-weight: bold;
+  color: #33ccff;
+}
+
+.setup-image-container {
+  display: block !important; /* Change from flex to block */
+  margin: 2rem 0;
+  text-align: center;
+  overflow: visible; /* Allow proper sizing */
+}
+
+.results-image-container {
+  display: block;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.setup-image-container img:not(.superconductor-image),
+.results-image-container img:not(.superconductor-image) {
+  display: block;
+  margin: 0 auto 1rem auto;
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(51, 204, 255, 0.2);
+}
+
+.setup-image-container p,
+.results-image-container p {
+  text-align: center;
+  font-style: italic;
+  color: #cccccc;
+  max-width: 600px;
+  margin: 1rem auto;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Specific styling for superconductor project images */
+.setup-image-container .superconductor-image {
+  display: block !important;
+  margin: 0 auto !important;
+  width: 50% !important; /* Reduced from 80% */
+  max-width: 500px !important; /* Add strict max-width */
+  height: auto !important; /* Maintain aspect ratio */
+  border-radius: 10px !important;
+  box-shadow: 0 4px 15px rgba(51, 204, 255, 0.2) !important;
+  object-fit: contain !important; /* Prevent cropping */
+}
+
+.superconductor-image-caption {
+  display: block !important;
+  text-align: center !important;
+  font-style: italic !important;
+  color: #cccccc !important;
+  max-width: 600px !important;
+  margin: 1rem auto !important;
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+}
+
+.setup-image,
+.results-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(51, 204, 255, 0.2);
+}
+
+.results-image {
+  max-width: 45%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clean, simplified image styling based on Muon project */
+.project-image-wrapper {
+  display: block;
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 100%;
+}
+
+.project-image {
+  display: block;
+  width: auto;
+  max-width: 90%;
+  max-height: 400px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(51, 204, 255, 0.2);
+  object-fit: contain;
+}
+
+.image-caption {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  color: #cccccc;
+  max-width: 600px;
+  margin: 1rem auto;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 1rem;
+  }
+
+  .project-header h1 {
+    font-size: 2rem;
+  }
+
+  .project-section {
+    padding: 1.5rem;
+  }
+
+  .project-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .setup-image,
+  .results-image {
+    max-width: 95%;
+  }
+
+  .superconductor-image {
+    width: 60% !important;
+    max-width: 300px !important;
+  }
+
+  .project-image {
+    max-width: 95%;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .project-section {
+    padding: 1rem;
+  }
+
+  .superconductor-image {
+    width: 80% !important;
+    max-width: 250px !important;
+  }
+
+  .project-image {
+    max-width: 100%;
+    max-height: 250px;
+  }
+}

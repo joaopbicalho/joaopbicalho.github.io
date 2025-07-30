@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaPaperPlane } from 'react-icons/fa';
 import './ContactSection.css';
 
 const ContactSection = ({ isDarkMode }) => {
@@ -36,40 +36,8 @@ const ContactSection = ({ isDarkMode }) => {
             I'm always open to discussing new opportunities and interesting projects. 
             Feel free to reach out if you'd like to collaborate!
           </p>
-          
-          <div className="contact-details">
-            <div className="contact-item">
-              <div className="contact-icon">
-                <FaEnvelope />
-              </div>
-              <div className="contact-text">
-                <h4>Email</h4>
-                <a href="mailto:joaopedrobicalho13@gmail.com">joaopedrobicalho13@gmail.com</a>
-              </div>
-            </div>
-            
-            <div className="contact-item">
-              <div className="contact-icon">
-                <FaPhone />
-              </div>
-              <div className="contact-text">
-                <h4>Phone</h4>
-                <span>+91 123 456 7890</span>
-              </div>
-            </div>
-            
-            <div className="contact-item">
-              <div className="contact-icon">
-                <FaMapMarkerAlt />
-              </div>
-              <div className="contact-text">
-                <h4>Location</h4>
-                <span>Pune, MH, India</span>
-              </div>
-            </div>
-          </div>
         </div>
-        
+
         <div className="contact-form-container">
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-row">

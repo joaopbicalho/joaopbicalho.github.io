@@ -200,6 +200,13 @@
   transform: translateY(-2px);
 }
 
+.kaon-decay-image {
+  transform: scale(0.75); /* Zoom out slightly */
+  display: block;
+  margin: 0 auto; /* Center the image */
+  overflow: visible; /* Allow the image to overflow the container */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .portfolio-section {
