@@ -128,11 +128,9 @@ const ResumeSection = ({ isDarkMode }) => {
 
             <div className="skill-category">
               <h3>Languages</h3>
-              <div className="skills-grid">
-                {skillsData.languages.map((skill, index) => (
-                  <div key={index} className="skill-item language-item">
-                    <span className="skill-name">{skill.name}</span>
-                  </div>
+              <div className="skills-grid languages">
+                {skillsData.languages.map((language, index) => (
+                  <span key={index} className="skill-tag">{language.name}</span>
                 ))}
               </div>
             </div>

@@ -186,19 +186,15 @@
   box-shadow: 0 4px 12px rgba(0, 212, 255, 0.15);
 }
 
-.language-item {
-  border-color: #e74c3c;
-}
-
-.language-item:hover {
-  border-color: #c0392b;
-  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.2);
-}
-
-.skill-name {
-  color: var(--text-primary);
-  font-weight: 500;
-  font-size: 0.85rem;
+.languages .skill-tag {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 /* Responsive design */

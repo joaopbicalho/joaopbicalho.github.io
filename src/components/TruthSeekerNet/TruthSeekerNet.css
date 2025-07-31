@@ -1,0 +1,125 @@
+/* TruthSeekerNet Project Styles */
+.truthseeker-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1b1b2f 0%, #162447 100%);
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #cccccc;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+h2 {
+  color: #00c9ff;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+p {
+  font-size: 1.1rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.image-placeholder {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px dashed #00c9ff;
+  padding: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: #aaaaaa;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.image-placeholder img {
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.image-placeholder-regular {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px dashed #00c9ff;
+  padding: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: #aaaaaa;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.image-placeholder-regular img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #00e0ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .truthseeker-container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .image-placeholder {
+    padding: 1rem;
+  }
+}

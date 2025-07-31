@@ -35,7 +35,7 @@ const ElectronSpinResonanceProject = () => {
           </p>
           
           <div className="dpph-structure">
-            <img src="/media/ESR-DPPH.svg" alt="DPPH Molecular Structure" className="dpph-image" />
+            <img src={`${import.meta.env.BASE_URL}media/ESR-DPPH.svg`} alt="DPPH Molecular Structure" className="dpph-image" />
           </div>
           
           <div className="sample-specs">
@@ -87,7 +87,7 @@ const ElectronSpinResonanceProject = () => {
           
           <div className="equipment-overview">
             <div className="equipment-image-container">
-              <img src="/media/ESR_full.jpg" alt="Complete ESR Experimental Setup" className="equipment-image" />
+              <img src={`${import.meta.env.BASE_URL}media/ESR_full.jpg`} alt="Complete ESR Experimental Setup" className="equipment-image" />
             </div>
             <p>
               The ESR spectrometer setup consists of several integrated components working together to generate, manipulate, and detect microwave signals for electron spin resonance measurements. The complete system shown above includes the microwave source, waveguide assembly, resonance cavity, electromagnet, and detection electronics.

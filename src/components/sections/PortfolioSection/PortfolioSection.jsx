@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import GRProject from '../GeneralRelativityProject/GRProject';
 import RoboticArmProject from '../RoboticArmProject/RoboticArmProject';
 import RobotControlProject from '../RobotControlProject/RobotControlProject';
-import TrashCompactorProject from '../TrashCompactorProject/TrashCompactorProject';
+// import TrashCompactorProject from '../TrashCompactorProject/TrashCompactorProject';
 import MuonLifetimeProject from '../MuonLifetimeProject/MuonLifetimeProject';
 import HighEnergyPhysicsProject from '../HighEnergyPhysicsProject/HighEnergyPhysicsProject';
 import SuperconductorProject from '../SuperconductorProject/SuperconductorProject';
 import ElectronSpinResonanceProject from '../ElectronSpinResonanceProject/ElectronSpinResonanceProject';
 import ComptonCrossSectionProject from '../ComptonCrossSectionProject/ComptonCrossSectionProject';
-import LieDetectorProject from '../LieDetectorProject/LieDetectorProject';
+import TruthSeekerNet from '../../TruthSeekerNet/TruthSeekerNet';
 import MuseHeadbandReaderProject from '../MuseHeadbandReaderProject/MuseHeadbandReaderProject';
 import ChirpletThesis from '../AdaptiveChirpletTransformProject/AdaptiveChirpletTransformProject';
 import './PortfolioSection.css';
@@ -39,22 +39,22 @@ const PortfolioSection = ({ isDarkMode }) => {
       github: "#",
       live: "#"
     },
-    {
-      id: 3,
-      title: "Trash Compactor",
-      category: "robotics",
-      image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1zbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjM5YzEyIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlRSQVNIPC90ZXh0Pjwvc3ZnPg==",
-      description: "Automated trash compaction system with smart sensors",
-      technologies: ["Arduino", "Sensors", "Mechanical Design", "C++"],
-      github: "#",
-      live: "#"
-    },
+    // {
+    //   id: 3,
+    //   title: "Trash Compactor",
+    //   category: "robotics",
+    //   image: "media/trash_compressor.png",
+    //   description: "Automated trash compaction system with smart sensors",
+    //   technologies: ["Arduino", "Sensors", "Mechanical Design", "C++"],
+    //   github: "#",
+    //   live: "#"
+    // },
     // Physics Projects
     {
       id: 8,
       title: "General Relativity Tensor Calculator",
       category: "physics",
-      image: "/media/general-rel.png",
+      image: `media/general-rel.png`,
       description: "Python code to calculate tensors based on spacetime metrics",
       technologies: ["Mathematical Physics", "Tensor Calculus", "Python"],
       github: "#",
@@ -115,7 +115,7 @@ const PortfolioSection = ({ isDarkMode }) => {
       id: 10,
       title: "Lie Detector",
       category: "eeg-bci",
-      image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1zbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjM5YzEyIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxJRSBERVRFQ1RPUjwvdGV4dD48L3N2Zz4=",
+      image: `media/lies.jpeg`,
       description: "EEG-based lie detection system using neural signals",
       technologies: ["Python", "EEG", "Signal Processing", "Machine Learning"],
       github: "#",
@@ -125,7 +125,7 @@ const PortfolioSection = ({ isDarkMode }) => {
       id: 11,
       title: "Muse Headband Reader",
       category: "eeg-bci",
-      image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1zbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjM5YzEyIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk1VU0U8L3RleHQ+PC9zdmc+",
+      image: "media/muse.jpg",
       description: "Real-time EEG data acquisition from Muse headband",
       technologies: ["Python", "Bluetooth", "EEG", "Real-time Processing"],
       github: "#",
@@ -135,9 +135,9 @@ const PortfolioSection = ({ isDarkMode }) => {
       id: 15,
       title: "Adaptive Chirplet Transform",
       category: "eeg-bci",
-      image: "/images/act-diagram.png",
+      image: `media/lie_wallpaper.jpg`,
       description: "Time-frequency decomposition methods for non-stationary signals.",
-      technologies: ["Signal Processing", "Chirplet Transform", "EEG Analysis"],
+      technologies: ["Signal Processing", "Chirplet Transform", "EEG Analysis", "Deep Learning"],
       github: "#",
       live: "#"
     },
@@ -206,7 +206,7 @@ const PortfolioSection = ({ isDarkMode }) => {
         setSelectedProject('compton-cross-section-project');
         break;
       case "Lie Detector":
-        setSelectedProject('lie-detector-project');
+        setSelectedProject('truthseeker-project');
         break;
       case "Muse Headband Reader":
         setSelectedProject('muse-headband-reader-project');
@@ -235,7 +235,7 @@ const PortfolioSection = ({ isDarkMode }) => {
       'superconductor-project': <SuperconductorProject />,
       'electron-spin-resonance-project': <ElectronSpinResonanceProject />,
       'compton-cross-section-project': <ComptonCrossSectionProject />,
-      'lie-detector-project': <LieDetectorProject />,
+      'truthseeker-project': <TruthSeekerNet />,
       'muse-headband-reader-project': <MuseHeadbandReaderProject />,
       'adaptive-chirplet-transform-project': <ChirpletThesis />,
     };
@@ -280,7 +280,7 @@ const PortfolioSection = ({ isDarkMode }) => {
               style={{ cursor: 'pointer' }}
             >
               <div className="project-image">
-                <img src={project.image} alt={project.title} className={project.className || ''} />
+                <img src={`${import.meta.env.BASE_URL}${project.image}`} alt={project.title} className={project.className || ''} />
                 <div className="project-overlay">
                   <div className="project-links">
                     {/* GitHub links removed from all project cards */}
