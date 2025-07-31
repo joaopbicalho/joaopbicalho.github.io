@@ -11,15 +11,15 @@ const AboutSection = ({ isDarkMode }) => {
       <div className="about-content">
         <div className="about-text">
           <p>
-            I'm an <strong>Engineering Physics</strong> graduate from the <strong>University of Toronto</strong> with a passion for fundamental physics, software engineering, EEG and neurotechnology, and space exploration.
+            I'm an Engineering Physics graduate from the University of Toronto with a passion for fundamental physics, software engineering, EEG and neurotechnology, and space exploration.
           </p>
           
           <p>
-            My academic path included graduate-level courses in <code>General Relativity</code>, <code>Particle Physics</code>, and <code>Computational Physics</code>, alongside minors in Mechatronics, Robotics, and Artificial Intelligence. I developed signal processing pipelines and neural networks to classify sleep stages from EEG data—research that led to a conference paper at ICCCE and earned a conference Award.
+            My academic path included graduate-level courses in General Relativity, Particle Physics, and Computational Physics, alongside minors in Mechatronics, Robotics, and Artificial Intelligence. I developed signal processing pipelines and neural networks to classify sleep stages from EEG data—research that led to a conference paper at ICCCE and earned a conference Award.
           </p>
           
           <p>
-            I've also contributed to the next generation of the <strong>SuperBIT telescope</strong> and worked at a Swiss aerospace startup designing spacecraft hardware simulations and HIL testing frameworks.
+            I've also contributed to the next generation of the SuperBIT telescope and worked at a Swiss aerospace startup designing spacecraft hardware simulations and HIL testing frameworks.
           </p>
           
           <p>

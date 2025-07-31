@@ -43,9 +43,9 @@
 }
 
 .about-text {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.8;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .about-text p {

@@ -39,7 +39,7 @@ const MuonLifetimeProject = () => {
           <h2>Experimental Setup</h2>
           <div className="equipment-overview">
             <div className="equipment-image-container">
-              <img src="/media/Muon_full3.jpg" alt="Liquid Scintillator Muon Detection Setup" className="equipment-image" />
+              <img src={`${import.meta.env.BASE_URL}media/Muon_full3.jpg`} alt="Liquid Scintillator Muon Detection Setup" className="equipment-image" />
             </div>
             <p>
               The detection system consisted of a large <strong>liquid scintillator</strong> cylinder connected to <strong>three photomultiplier tubes (PMTs)</strong> and powered by a +1600V supply via a high-voltage potentiometer. 
@@ -81,7 +81,7 @@ const MuonLifetimeProject = () => {
           <div className="project-section">
             <h3>Decay Histogram</h3>
             <div className="results-image-container">
-              <img src="/media/muon_result.png" alt="Muon Decay Time Histogram with Fit" className="results-image" />
+              <img src={`${import.meta.env.BASE_URL}media/muon_result.png`} alt="Muon Decay Time Histogram with Fit" className="results-image" />
             </div>
           </div>
 

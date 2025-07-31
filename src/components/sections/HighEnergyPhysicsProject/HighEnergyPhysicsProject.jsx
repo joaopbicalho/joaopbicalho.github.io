@@ -33,7 +33,7 @@ const HighEnergyPhysicsProject = () => {
             <li><strong>Calibration:</strong> Ionization density and radius-to-momentum mapping via dE/dx curves</li>
           </ul>
           <div className="equipment-image-container">
-            <img src="/media/bubble_chamber_setup.jpg" alt="Bubble Chamber Setup" className="equipment-image" />
+            <img src={`${import.meta.env.BASE_URL}media/bubble_chamber_setup.jpg`} alt="Bubble Chamber Setup" className="equipment-image" />
           </div>
         </section>
 
@@ -45,7 +45,7 @@ const HighEnergyPhysicsProject = () => {
             suggesting the presence of a short-lived Λ<sup>0</sup> baryon.
           </p>
           <div className="results-image-container">
-            <img src="/media/hep_event1.jpg" alt="Bubble Chamber Event 1" className="results-image" />
+            <img src={`${import.meta.env.BASE_URL}media/hep_event1.jpg`} alt="Bubble Chamber Event 1" className="results-image" />
           </div>
           <p>We postulated the following reaction:</p>
           <div className="equation-box">

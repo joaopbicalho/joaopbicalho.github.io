@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaMapMarkerAlt, FaDownload } from 'react-icons/fa
 import './Sidebar.css';
 
 const Sidebar = ({ isDarkMode }) => {
-  const profileImage = "https://ankitpakhale.netlify.app/assets/parson-img-1-XHSTiwGi.png";
+  const profileImage = `${import.meta.env.BASE_URL}media/me.JPG`;
   
   return (
     <div className="sidebar">

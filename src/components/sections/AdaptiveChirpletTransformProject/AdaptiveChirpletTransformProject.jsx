@@ -152,7 +152,7 @@ const ChirpletThesis = () => {
 
           <div className="setup-image-container">
             <img
-              src="/media/act_window.png"
+              src={`${import.meta.env.BASE_URL}media/act_window.png`}
               alt="Effect of Hamming Window on Signal Approximation"
               width={600}
               height={400}

@@ -60,7 +60,7 @@ const Hero = () => {
         <div className="hero-image">
           <div className="profile-container">
             <div className="profile-circle">
-              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWExYTJlIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0MCIgZmlsbD0iIzAwZDRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkpQPC90ZXh0Pjwvc3ZnPg==" alt="Joao Paulo" />
+              <img src={`${import.meta.env.BASE_URL}media/hero-image.svg`} alt="Joao Paulo" />
             </div>
             <div className="profile-glow"></div>
           </div>
