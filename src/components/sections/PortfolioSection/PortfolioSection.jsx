@@ -20,49 +20,65 @@ const PortfolioSection = ({ isDarkMode }) => {
   const [filter, setFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const projects = [
+  // Extract your projects
+  const adaptiveChirplet = {
+    id: 15,
+    title: "Adaptive Chirplet Transform",
+    category: "eeg-bci,ai",
+    image: `media/lie_wallpaper.jpg`,
+    description: "Time-frequency decomposition methods for non-stationary signals.",
+    technologies: ["Signal Processing", "Chirplet Transform", "EEG Analysis", "Deep Learning"],
+    github: "#",
+    live: "#"
+  };
+  
+  const generalRelativity = {
+    id: 8,
+    title: "General Relativity Tensor Calculator",
+    category: "physics",
+    image: `media/general-rel.png`,
+    description: "Python code to calculate tensors based on spacetime metrics",
+    technologies: ["Mathematical Physics", "Tensor Calculus", "Python"],
+    github: "#",
+    live: "#"
+  };
+  
+  const truthSeekerNet = {
+    id: 10,
+    title: "TruthSeekerNet",
+    category: "eeg-bci,ai",
+    image: `media/lies.jpeg`,
+    description: "EEG-based lie detection system using neural signals",
+    technologies: ["Python", "EEG", "Signal Processing", "Machine Learning"],
+    github: "#",
+    live: "#"
+  };
+  
+  const robotControl = {
+    id: 2,
+    title: "Robot Modelling and Control",
+    category: "robotics",
+    image: "media/robot_control_wp.png",
+    description: "Robot Kinematics, Control, and Motion Planning with the KUKA Robotic Arm",
+    technologies: ["MATLAB", "DH Convention", "Control Theory", "Forward and Inverse Kinematics"],
+    github: "#",
+    live: "#"
+  };
+
+  // Define the rest of your projects
+  const otherProjects = [
     // Robotics Projects
     {
       id: 1,
       title: "Robotic Arm Coin Selector",
-      category: "robotics",
-      image: "media/robot_coin_cad.png",
+      category: "ai,robotics",
+      image: "media/coin_wpp2.png",
       description: "Automated robotic arm system for coin selection and sorting",
-      technologies: ["Python", "OpenCV", "Servo Motors", "Arduino"],
+      technologies: ["Python", "TinyML", "Servo Motors", "Raspberry Pi"],
       github: "#",
       live: "#"
     },
-    {
-      id: 2,
-      title: "Robot Modelling and Control",
-      category: "robotics",
-      image: "media/robot_control_wp.png",
-      description: "Robot Kinematics, Control, and Motion Planning with the KUKA Robotic Arm",
-      technologies: ["MATLAB", "DH Convention", "Control Theory", "Forward and Inverse Kinematics"],
-      github: "#",
-      live: "#"
-    },
-    // {
-    //   id: 3,
-    //   title: "Trash Compactor",
-    //   category: "robotics",
-    //   image: "media/trash_compressor.png",
-    //   description: "Automated trash compaction system with smart sensors",
-    //   technologies: ["Arduino", "Sensors", "Mechanical Design", "C++"],
-    //   github: "#",
-    //   live: "#"
-    // },
     // Physics Projects
-    {
-      id: 8,
-      title: "General Relativity Tensor Calculator",
-      category: "physics",
-      image: `media/general-rel.png`,
-      description: "Python code to calculate tensors based on spacetime metrics",
-      technologies: ["Mathematical Physics", "Tensor Calculus", "Python"],
-      github: "#",
-      live: "#"
-    },
     {
       id: 4,
       title: "Muon Lifetime",
@@ -145,6 +161,16 @@ const PortfolioSection = ({ isDarkMode }) => {
       live: "#"
     },
     // AI Projects
+        {
+      id: 16,
+      title: "Semantic Similarity System",
+      category: "ai",
+      image: "media/semantic.png",
+      description: "NLP system for vocabulary questions using cosine similarity",
+      technologies: ["Python", "NLP", "Vector Semantics", "Cosine Similarity"],
+      github: "#",
+      live: "#"
+    },
     {
       id: 13,
       title: "Gomoku",
@@ -155,16 +181,18 @@ const PortfolioSection = ({ isDarkMode }) => {
       github: "#",
       live: "#"
     },
-    {
-      id: 16,
-      title: "Semantic Similarity System",
-      category: "ai",
-      image: "media/semantic.png",
-      description: "NLP system for vocabulary questions using cosine similarity",
-      technologies: ["Python", "NLP", "Vector Semantics", "Cosine Similarity"],
-      github: "#",
-      live: "#"
-    },
+
+  ];
+
+  // Combine projects in the desired order
+  const projects = [
+    adaptiveChirplet,    // First
+    generalRelativity,   // Second
+    truthSeekerNet,      // Third
+    robotControl,        // Fourth
+    ...otherProjects.filter(p => 
+      ![adaptiveChirplet.id, generalRelativity.id, truthSeekerNet.id, robotControl.id].includes(p.id)
+    )
   ];
 
   const categories = [
@@ -177,7 +205,17 @@ const PortfolioSection = ({ isDarkMode }) => {
 
   const filteredProjects = filter === 'all' 
     ? projects 
-    : projects.filter(project => project.category.toLowerCase().split(',').map(c => c.trim()).includes(filter.toLowerCase()));
+    : (() => {
+        const filtered = projects.filter(project => project.category.toLowerCase().split(',').map(c => c.trim()).includes(filter.toLowerCase()));
+        if (filter === 'ai' || filter === 'robotics') {
+          const coinSelectorIndex = filtered.findIndex(p => p.title === 'Robotic Arm Coin Selector');
+          if (coinSelectorIndex !== -1) {
+            const [coinSelector] = filtered.splice(coinSelectorIndex, 1);
+            filtered.push(coinSelector);
+          }
+        }
+        return filtered;
+      })();
 
   const handleProjectClick = (project) => {
     switch (project.title) {

@@ -6,14 +6,14 @@ const RobotControlProject = () => {
     <div className="project-detail">
       <div className="project-hero">
         <h1>Robot Modelling and Control</h1>
-        <p className="project-subtitle">Hands-On Exploration of Robot Kinematics, Control, and Motion Planning with the KUKA Robotic Arm</p>
+        <p className="project-subtitle"> Exploration of Robot Kinematics and Motion Planning with the KUKA Robotic Arm</p>
       </div>
 
       <div className="project-content">
         <section>
           <h2>Introduction</h2>
           <p>
-            This project was part of ECE470: Robot Modelling and Control, a joined advanced undergraduate and graduate course at the University of Toronto. Over the span of two months, in a group of three members, worked on a series of interconnected laboratories. These labs focused on implementing advanced robotics concepts using the industrial grade KUKA robotic arm. Through this hands-on experience, we developed a comprehensive understanding of robot kinematics, control, and motion planning. The project began with mathematical modeling using the Denavit-Hartenberg convention and progressed to implementing sophisticated motion planning algorithms with obstacle avoidance.
+            This project was part of ECE470: Robot Modelling and Control, a joined advanced undergraduate and graduate course at the University of Toronto. Over the span of two months, in a group of three members, we worked on a series of interconnected laboratories. These labs focused on implementing advanced robotics concepts using the industrial grade KUKA robotic arm and MATLAB. Through this hands-on experience, we developed a comprehensive understanding of robot kinematics, control, and motion planning. The project began with mathematical modeling using the Denavit-Hartenberg convention and progressed to implementing sophisticated motion planning algorithms with obstacle avoidance.
           </p>
         </section>
 
@@ -145,7 +145,8 @@ const RobotControlProject = () => {
               J<sub>vj</sub> = {"z"}<sub>j-1</sub><sup>0</sup>, if joint j is prismatic<br />
               J<sub>vj</sub> = {"z"}<sub>j-1</sub><sup>0</sup> × ({"o"}<sub>i</sub><sup>0</sup> - {"o"}<sub>j-1</sub><sup>0</sup>), if joint j is revolute
             </div>
-            
+        
+
             <h3>Attractive Field</h3>
             <p>
               The attractive component pulls the end-effector toward the goal. It is computed as:
@@ -161,6 +162,31 @@ const RobotControlProject = () => {
               For initial tests we set ζ<sub>i</sub> = 10<sup>-2</sup> and d<sub>i</sub> = 10<sup>6</sup>, effectively disabling saturation.
             </p>
           </div>
+        </section>
+
+                <section>
+          <h2>MATLAB Simulation and Testing</h2>
+          <p>
+            To validate our theoretical models before physical implementation, we developed comprehensive MATLAB scripts 
+            that tested, forward and inverse kinematics, and motion planning with obstacle avoidance. These implementations were rigorously tested across various 
+            configurations and edge cases to ensure reliability. The motion planning algorithms using artificial 
+            potential fields were first simulated in a controlled environment.
+          </p>
+          <p>
+            Simulink was used to create a dynamic model of the robot, allowing for real-time visualization of the 
+            robot's behavior under different control strategies. This simulation environment provided valuable 
+            insights into the robot's dynamics and helped identify potential issues before physical implementation.
+          </p>
+          <div className="video-container">
+            <video controls>
+              <source src={`media/robot_control_sim.mp4`} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="caption">
+            Simulation of the KUKA robotic arm navigating through space using the artificial potential field 
+            method for obstacle avoidance, implemented in MATLAB/Simulink.
+          </p>
         </section>
 
         <section>

@@ -22,7 +22,7 @@ export default function RoboticArmProject() {
         <section className="project-section">
           <h2>Project Objectives</h2>
           <p>
-            The goal was to construct a three-joint robotic arm capable of picking up and sorting coins into bins. Initially conceived as a general-purpose robotic manipulator, the project was later focused into solving a specific, well-defined task: coin classification and sorting. This shift allowed the group to implement embedded systems knowledge in a tangible, integrated solution.
+            The goal was to construct a three-joint robotic arm capable of picking up and sorting coins into bins. This project allowed the group to implement embedded systems, microcontroller programming, and computer vision in a tangible, integrated solution for coin classification and sorting.
           </p>
           <p>
             Below is an image of the final design of the robotic arm system:
