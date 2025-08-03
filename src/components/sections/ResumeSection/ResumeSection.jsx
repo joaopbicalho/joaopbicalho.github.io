@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa';
 import './ResumeSection.css';
 
-const ResumeSection = ({ isDarkMode }) => {
+const ResumeSection = ({ isDarkMode, onNavigate }) => {
   const education = [
     {
       year: "2020 - 2025",
@@ -74,6 +74,18 @@ const ResumeSection = ({ isDarkMode }) => {
 
   return (
     <div className="resume-section">
+      {/* Top navigation */}
+      <div className="top-navigation">
+        <nav>
+          <ul>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('about'); }}>About</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('resume'); }} className="active">Resume</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('portfolio'); }}>Portfolio</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      
       <div className="section-header">
         <h1>Resume</h1>
       </div>

@@ -1,12 +1,58 @@
 .portfolio-section {
   padding: 0;
-  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 50%, var(--bg-secondary) 100%);
+  background: var(--bg-tertiary);
   min-height: 100vh;
   transition: background 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+/* Top Navigation Styles */
+.top-navigation {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5rem 2rem 0;
+  position: relative;
+  z-index: 100;
+}
+
+.top-navigation nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.top-navigation nav ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.top-navigation nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+.top-navigation nav ul li a.active {
+  color: var(--text-primary);
+  position: relative;
+}
+
+.top-navigation nav ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-color);
 }
 
 .section-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
   padding-top: 2rem;
 }
@@ -211,6 +257,15 @@
 @media (max-width: 768px) {
   .portfolio-section {
     padding: 60px 0;
+  }
+
+  .top-navigation {
+    justify-content: center;
+    padding: 1rem 1rem 0;
+  }
+  
+  .top-navigation nav ul {
+    gap: 1rem;
   }
 
   .section-header h1 {

@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { FaPaperPlane } from 'react-icons/fa';
 import './ContactSection.css';
 
-const ContactSection = ({ isDarkMode }) => {
+const ContactSection = ({ isDarkMode, onNavigate }) => {
   const form = useRef();
   const [formStatus, setFormStatus] = useState({
     submitting: false,
@@ -60,6 +60,18 @@ const ContactSection = ({ isDarkMode }) => {
 
   return (
     <div className="contact-section">
+      {/* Top navigation */}
+      <div className="top-navigation">
+        <nav>
+          <ul>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('about'); }}>About</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('resume'); }}>Resume</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('portfolio'); }}>Portfolio</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }} className="active">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      
       <div className="section-header">
         <h1>Contact</h1>
       </div>

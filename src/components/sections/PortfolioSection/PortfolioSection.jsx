@@ -16,7 +16,7 @@ import GomokuAIProject from '../GomokuProject/GomokuProject';
 import SemanticSimilarityProject from '../SemanticSimilarityProject/SemanticSimilarityProject';
 import './PortfolioSection.css';
 
-const PortfolioSection = ({ isDarkMode }) => {
+const PortfolioSection = ({ isDarkMode, onNavigate }) => {
   const [filter, setFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -155,7 +155,7 @@ const PortfolioSection = ({ isDarkMode }) => {
       title: "Adaptive Chirplet Transform",
       category: "eeg-bci,ai",
       image: `media/lie_wallpaper.jpg`,
-      description: "Time-frequency decomposition methods for non-stationary signals.",
+      description: "Exploring the potential of ACT as a feature extraction method for EEG.",
       technologies: ["Signal Processing", "Chirplet Transform", "EEG Analysis", "Deep Learning"],
       github: "#",
       live: "#"
@@ -305,6 +305,18 @@ const PortfolioSection = ({ isDarkMode }) => {
 
   return (
     <section id="projects" className="portfolio-section">
+      {/* Top navigation */}
+      <div className="top-navigation">
+        <nav>
+          <ul>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('about'); }}>About</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('resume'); }}>Resume</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('portfolio'); }} className="active">Portfolio</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      
       <div className="section-header">
         <h1>Portfolio</h1>
       </div>

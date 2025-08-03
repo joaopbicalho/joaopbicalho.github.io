@@ -2,6 +2,7 @@
   background: var(--bg-secondary);
   border-radius: 20px;
   padding: 30px;
+  margin: 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -43,6 +44,7 @@
   color: var(--text-secondary);
   font-size: 0.95rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .social-links {
@@ -75,83 +77,55 @@
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
-.contact-item {
+.contact-item-new {
   display: flex;
   align-items: flex-start;
   gap: 15px;
 }
 
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  background: var(--accent-color);
-  border-radius: 10px;
+.contact-icon-new {
+  width: 35px;
+  height: 35px;
+  background: #222;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--accent-color);
   font-size: 1rem;
   flex-shrink: 0;
 }
 
-.contact-details {
+.contact-details-new {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  flex: 1;
+  gap: 2px;
 }
 
-.contact-details .label {
-  color: var(--text-muted);
-  font-size: 0.85rem;
+.label-new {
+  color: #999;
+  font-size: 0.7rem;
   text-transform: uppercase;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-align: left;
 }
 
-.contact-details span,
-.contact-details a {
+.contact-details-new span,
+.contact-details-new a {
   color: var(--text-primary);
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 400;
   text-decoration: none;
   word-break: break-word;
 }
 
-.contact-details a:hover {
+.contact-details-new a:hover {
   color: var(--accent-color);
-}
-
-.download-cv {
-  margin-top: 10px;
-}
-
-.cv-button {
-  width: 100%;
-  background: var(--accent-color);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  padding: 15px 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.cv-button:hover {
-  background: #e67e22;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+  text-decoration: underline;
 }
 
 .copyright {
@@ -220,5 +194,6 @@
   
   .contact-info {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 }

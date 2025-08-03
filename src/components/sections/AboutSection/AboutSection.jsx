@@ -1,9 +1,21 @@
 import React from 'react';
 import './AboutSection.css';
 
-const AboutSection = ({ isDarkMode }) => {
+const AboutSection = ({ isDarkMode, onNavigate }) => {
   return (
     <div id="about" className="about-section">
+      {/* Navigation using state-based navigation similar to PortfolioSection */}
+      <div className="top-navigation">
+        <nav>
+          <ul>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('about'); }} className="active">About</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('resume'); }}>Resume</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('portfolio'); }}>Portfolio</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      
       <div className="section-header">
         <h1>About</h1>
       </div>
@@ -23,7 +35,7 @@ const AboutSection = ({ isDarkMode }) => {
           </p>
 
           <p>
-            I’ve lived in Italy, Brazil, Costa Rica, Canada, Switzerland, and now Germany—experiences that have shaped how I approach teamwork, communication, and engineering with a global mindset. In my free time, I enjoy hiking, surfing, and playing guitar.
+            I've lived in Italy, Brazil, Costa Rica, Canada, Switzerland, and now Germany—experiences that have shaped how I approach teamwork, communication, and engineering with a global mindset. In my free time, I enjoy hiking, surfing, and playing guitar.
           </p>
 
           <p>

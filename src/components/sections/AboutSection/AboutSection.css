@@ -1,5 +1,6 @@
 .about-section {
   animation: fadeIn 0.5s ease-in-out;
+  margin-right: 3rem;
 }
 
 @keyframes fadeIn {
@@ -175,6 +176,50 @@
   line-height: 1.6;
 }
 
+/* Top Navigation Styles */
+.top-navigation {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: 100;
+}
+
+.top-navigation nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.top-navigation nav ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.top-navigation nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+.top-navigation nav ul li a.active {
+  color: var(--text-primary);
+  position: relative;
+}
+
+.top-navigation nav ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-color);
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
   .services-grid {
@@ -213,5 +258,14 @@
   
   .about-text {
     font-size: 0.95rem;
+  }
+  
+  .top-navigation {
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  
+  .top-navigation nav ul {
+    gap: 1rem;
   }
 }
