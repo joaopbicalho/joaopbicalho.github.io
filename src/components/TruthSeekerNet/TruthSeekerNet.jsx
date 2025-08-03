@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaGithub } from 'react-icons/fa';
 import './TruthSeekerNet.css';
 
 const TruthSeekerNet = () => {
@@ -6,7 +7,17 @@ const TruthSeekerNet = () => {
     <div className="truthseeker-container">
       <h1>TruthSeekerNet: EEG-Based Lie Detection</h1>
       <p className="subtitle">Final Project Report for APS360 - Deep Learning (Group Project)</p>
-
+        <div className="github-repo-link">
+          <a 
+            href="https://github.com/antoinevilain001/aps360project" 
+            className="github-link" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
+            <span>View Repository</span>
+          </a>
+        </div>
       <section>
         <h2>Introduction</h2>
         <p>
@@ -61,11 +72,7 @@ const TruthSeekerNet = () => {
         </p>
       </section>
 
-      <footer>
-        <a href="https://github.com/antoinevilain001/aps360project" target="_blank" rel="noopener noreferrer">
-          View Project on GitHub
-        </a>
-      </footer>
+
     </div>
   );
 };

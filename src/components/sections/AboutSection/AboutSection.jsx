@@ -19,9 +19,13 @@ const AboutSection = ({ isDarkMode }) => {
           </p>
           
           <p>
-            I've also contributed to the next generation of the SuperBIT telescope and worked at a Swiss aerospace startup designing spacecraft hardware simulations and HIL testing frameworks.
+            I completed two internships at Coactum, a Swiss aerospace startup developing an orbital transfer vehicle, where I developed a flight software testbench designing hardware for the HIL setup and writing software emulations for key avionics and sensors.
           </p>
-          
+
+          <p>
+            I’ve lived in Italy, Brazil, Costa Rica, Canada, Switzerland, and now Germany—experiences that have shaped how I approach teamwork, communication, and engineering with a global mindset. In my free time, I enjoy hiking, surfing, and playing guitar.
+          </p>
+
           <p>
             I'm driven by curiosity—whether it's decoding brainwaves, simulating satellites, or understanding the universe at its core.
           </p>

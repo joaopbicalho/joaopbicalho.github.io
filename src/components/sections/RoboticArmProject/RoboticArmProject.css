@@ -1,0 +1,242 @@
+/* Robotic Arm Coin Sorter Project Styles */
+.project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #3fbaff;
+}
+
+.project-header h1 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #3fbaff 0%, #0077be 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.project-subtitle {
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  font-style: italic;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.project-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(63, 186, 255, 0.3);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.project-section h2 {
+  color: #3fbaff;
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+  border-left: 4px solid #3fbaff;
+  padding-left: 0.75rem;
+}
+
+.project-section p,
+.project-section li {
+  font-size: 1.1rem;
+  color: #dddddd;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.project-section ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.image-placeholder,
+.diagram-placeholder {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: rgba(63, 186, 255, 0.05);
+  border: 1px dashed #3fbaff;
+  color: #3fbaff;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.equation-box {
+  background: rgba(63, 186, 255, 0.15);
+  border: 1px solid #3fbaff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: left;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.equation-box p { 
+  margin: 0.5rem 0;
+  font-family: 'Courier New', monospace;
+  font-size: 4.9rem;
+  color: #ffffff;
+}
+
+.setup-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .5rem 0;
+}
+
+.setup-image {
+  max-width: 120%; /* Increased from 50% to 60% */
+  max-height: 850px; /* Increased from 400px to 450px */
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(63, 186, 255, 0.15); /* Reduced shadow size */
+  object-fit: contain; /* Ensures proper scaling */
+}
+
+.results-image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.results-video-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 90%;
+  overflow: hidden;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(63, 186, 255, 0.3);
+  border-radius: 12px;
+}
+
+.results-video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mechanical-diagram-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 80%; /* Constrain the container width */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.mechanical-diagram-container img {
+    max-width: 30%;
+    max-height: 150px; /* Make the image smaller */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.setup-video-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(63, 186, 255, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.setup-video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.setup-image2-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.setup-image2 {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(63, 186, 255, 0.2);
+  object-fit: contain;
+}
+
+.results-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 1rem;
+  }
+
+  .project-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-section p,
+  .project-section li {
+    font-size: 1rem;
+  }
+
+  .image-placeholder,
+  .diagram-placeholder {
+    height: 200px;
+    font-size: 0.9rem;
+  }
+}

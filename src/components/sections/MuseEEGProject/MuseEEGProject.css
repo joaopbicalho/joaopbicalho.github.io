@@ -1,0 +1,252 @@
+/* MuseEEGProject.css */
+.project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #00d4ff;
+}
+
+.project-header h1 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.project-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.project-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.project-section h2 {
+  color: #00d4ff;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.project-section h2::before {
+  content: "▶";
+  color: #0099cc;
+  font-size: 1rem;
+}
+
+.project-section p {
+  margin-bottom: 1rem;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.project-section ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-section li {
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.setup-image-container {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.setup-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 212, 255, 0.5);
+}
+
+.equation-box {
+  background: rgba(0, 212, 255, 0.1);
+  border-left: 4px solid #00d4ff;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+}
+
+.equation-box p {
+  margin: 0.5rem 0;
+  color: #ffffff;
+}
+
+.equation-box code {
+  background: #0099cc;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.equation-display {
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.equation-large {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ffffff;
+  display: inline-block;
+  line-height: 1.8;
+}
+
+.fraction {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 0.3rem;
+}
+
+.numerator {
+  border-bottom: 1px solid #00d4ff;
+  padding-bottom: 0.1rem;
+  margin-bottom: 0.1rem;
+  font-size: 0.9em;
+}
+
+.denominator {
+  font-size: 0.9em;
+}
+
+.equation-explanation {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #cccccc;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.example-box {
+  background: rgba(0, 0, 0, 0.6);
+  color: #00d4ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.example-box pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  color: #ffffff;
+}
+
+.github-repo-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.github-link:hover {
+  background: #00d4ff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.github-link svg {
+  font-size: 1.2rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 1rem;
+  }
+  
+  .project-header h1 {
+    font-size: 2rem;
+  }
+  
+  .project-section {
+    padding: 1.5rem;
+  }
+  
+  .project-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .github-link {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}

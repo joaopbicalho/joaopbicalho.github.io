@@ -10,7 +10,10 @@ import ElectronSpinResonanceProject from '../ElectronSpinResonanceProject/Electr
 import ComptonCrossSectionProject from '../ComptonCrossSectionProject/ComptonCrossSectionProject';
 import TruthSeekerNet from '../../TruthSeekerNet/TruthSeekerNet';
 import MuseHeadbandReaderProject from '../MuseHeadbandReaderProject/MuseHeadbandReaderProject';
+import MuseEEGProject from '../MuseEEGProject/MuseEEGProject';
 import ChirpletThesis from '../AdaptiveChirpletTransformProject/AdaptiveChirpletTransformProject';
+import GomokuAIProject from '../GomokuProject/GomokuProject';
+import SemanticSimilarityProject from '../SemanticSimilarityProject/SemanticSimilarityProject';
 import './PortfolioSection.css';
 
 const PortfolioSection = ({ isDarkMode }) => {
@@ -23,9 +26,9 @@ const PortfolioSection = ({ isDarkMode }) => {
       id: 1,
       title: "Robotic Arm Coin Selector",
       category: "robotics",
-      image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1zbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjM5YzEyIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkFSTTwvdGV4dD48L3N2Zz4=",
+      image: "media/robot_coin_cad.png",
       description: "Automated robotic arm system for coin selection and sorting",
-      technologies: ["Python", "OpenCV", "ROS", "Arduino"],
+      technologies: ["Python", "OpenCV", "Servo Motors", "Arduino"],
       github: "#",
       live: "#"
     },
@@ -33,9 +36,9 @@ const PortfolioSection = ({ isDarkMode }) => {
       id: 2,
       title: "Robot Modelling and Control",
       category: "robotics",
-      image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1zbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjM5YzEyIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlJPQk9UPC90ZXh0Pjwvc3ZnPg==",
-      description: "Advanced robotic modeling and control system implementation",
-      technologies: ["MATLAB", "Simulink", "Control Theory", "Kinematics"],
+      image: "media/robot_control_wp.png",
+      description: "Robot Kinematics, Control, and Motion Planning with the KUKA Robotic Arm",
+      technologies: ["MATLAB", "DH Convention", "Control Theory", "Forward and Inverse Kinematics"],
       github: "#",
       live: "#"
     },
@@ -113,8 +116,8 @@ const PortfolioSection = ({ isDarkMode }) => {
     // EEG/BCI Projects
     {
       id: 10,
-      title: "Lie Detector",
-      category: "eeg-bci",
+      title: "TruthSeekerNet",
+      category: "eeg-bci,ai",
       image: `media/lies.jpeg`,
       description: "EEG-based lie detection system using neural signals",
       technologies: ["Python", "EEG", "Signal Processing", "Machine Learning"],
@@ -123,18 +126,18 @@ const PortfolioSection = ({ isDarkMode }) => {
     },
     {
       id: 11,
-      title: "Muse Headband Reader",
+      title: "Muse EEG Real-Time Acquisition",
       category: "eeg-bci",
       image: "media/muse.jpg",
-      description: "Real-time EEG data acquisition from Muse headband",
-      technologies: ["Python", "Bluetooth", "EEG", "Real-time Processing"],
+      description: "Real-time EEG data acquisition and processing from Muse headband via UDP/OSC",
+      technologies: ["Python", "UDP/OSC", "MNE-Python", "Signal Processing", "EEG"],
       github: "#",
       live: "#"
     },
     {
       id: 15,
       title: "Adaptive Chirplet Transform",
-      category: "eeg-bci",
+      category: "eeg-bci,ai",
       image: `media/lie_wallpaper.jpg`,
       description: "Time-frequency decomposition methods for non-stationary signals.",
       technologies: ["Signal Processing", "Chirplet Transform", "EEG Analysis", "Deep Learning"],
@@ -146,35 +149,35 @@ const PortfolioSection = ({ isDarkMode }) => {
       id: 13,
       title: "Gomoku",
       category: "ai",
-      image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1zbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjM5YzEyIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkdPTU9LVTwvdGV4dD48L3N2Zz4=",
+      image: "media/gomoku.png",
       description: "AI-powered Gomoku game with intelligent opponent",
       technologies: ["Python", "Game AI", "Minimax", "Alpha-Beta Pruning"],
       github: "#",
       live: "#"
     },
     {
-      id: 14,
-      title: "Hua Rong Dao",
+      id: 16,
+      title: "Semantic Similarity System",
       category: "ai",
-      image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1zbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjM5YzEyIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlBVWlpMRTwvdGV4dD48L3N2Zz4=",
-      description: "AI solver for the classic Hua Rong Dao sliding puzzle",
-      technologies: ["Python", "Search Algorithms", "Heuristics", "Optimization"],
+      image: "media/semantic.png",
+      description: "NLP system for vocabulary questions using cosine similarity",
+      technologies: ["Python", "NLP", "Vector Semantics", "Cosine Similarity"],
       github: "#",
       live: "#"
-    }
+    },
   ];
 
   const categories = [
     { key: 'all', label: 'All' },
-    { key: 'eeg-bci', label: 'EEG/BCI' },
-    { key: 'ai', label: 'AI' },
+    { key: 'eeg-bci', label: 'EEG' },
+    { key: 'physics', label: 'Physics' },
     { key: 'robotics', label: 'Robotics' },
-    { key: 'physics', label: 'Physics' }
+    { key: 'ai', label: 'AI' }
   ];
 
   const filteredProjects = filter === 'all' 
     ? projects 
-    : projects.filter(project => project.category.toLowerCase() === filter.toLowerCase());
+    : projects.filter(project => project.category.toLowerCase().split(',').map(c => c.trim()).includes(filter.toLowerCase()));
 
   const handleProjectClick = (project) => {
     switch (project.title) {
@@ -187,9 +190,9 @@ const PortfolioSection = ({ isDarkMode }) => {
       case "Robot Modelling and Control":
         setSelectedProject('robot-control-project');
         break;
-      case "Trash Compactor":
-        setSelectedProject('trash-compactor-project');
-        break;
+      // case "Trash Compactor":
+      //   setSelectedProject('trash-compactor-project');
+      //   break;
       case "Muon Lifetime":
         setSelectedProject('muon-lifetime-project');
         break;
@@ -205,17 +208,24 @@ const PortfolioSection = ({ isDarkMode }) => {
       case "Measurement of Compton Cross Section":
         setSelectedProject('compton-cross-section-project');
         break;
-      case "Lie Detector":
+      case "TruthSeekerNet":
         setSelectedProject('truthseeker-project');
         break;
-      case "Muse Headband Reader":
-        setSelectedProject('muse-headband-reader-project');
+      case "Muse EEG Real-Time Acquisition":
+        setSelectedProject('muse-eeg-project');
         break;
       case "Adaptive Chirplet Transform":
         setSelectedProject('adaptive-chirplet-transform-project');
         break;
+      case "Gomoku":
+        setSelectedProject('gomoku-project');
+        break;
+      case "Semantic Similarity System":
+        setSelectedProject('semantic-similarity-project');
+        break;
       default:
         setSelectedProject(null);
+        break;
     }
   };
 
@@ -229,7 +239,7 @@ const PortfolioSection = ({ isDarkMode }) => {
       'gr-project': <GRProject />,
       'robotic-arm-project': <RoboticArmProject />,
       'robot-control-project': <RobotControlProject />,
-      'trash-compactor-project': <TrashCompactorProject />,
+      // 'trash-compactor-project': <TrashCompactorProject />,
       'muon-lifetime-project': <MuonLifetimeProject />,
       'high-energy-physics-project': <HighEnergyPhysicsProject />,
       'superconductor-project': <SuperconductorProject />,
@@ -237,7 +247,10 @@ const PortfolioSection = ({ isDarkMode }) => {
       'compton-cross-section-project': <ComptonCrossSectionProject />,
       'truthseeker-project': <TruthSeekerNet />,
       'muse-headband-reader-project': <MuseHeadbandReaderProject />,
+      'muse-eeg-project': <MuseEEGProject />,
       'adaptive-chirplet-transform-project': <ChirpletThesis />,
+      'gomoku-project': <GomokuAIProject />,
+      'semantic-similarity-project': <SemanticSimilarityProject />
     };
 
     return (
