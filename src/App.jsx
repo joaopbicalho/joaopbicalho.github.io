@@ -59,17 +59,30 @@ export default function App() {
   };
 
   return (
-    <div className="App" style={{ display: 'flex', minHeight: '100vh' }}>
-      {/* Left Sidebar */}
-      <div style={{ width: '300px', flexShrink: 0 }}>
+    <div className="App">
+      {/* Left Sidebar - Desktop */}
+      <div className="sidebar-desktop">
         <Sidebar isDarkMode={isDarkMode} />
       </div>
       
       {/* Theme Toggle - Hidden for now */}
       {/* <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} /> */}
       
-      {/* Main Content Area */}
-      <div className="main-content">
+      {/* Mobile Layout Container */}
+      <div className="mobile-layout">
+        {/* Main Content Area - Mobile (comes first) */}
+        <div className="main-content">
+          {renderActiveSection()}
+        </div>
+        
+        {/* Bottom Sidebar - Mobile (comes after content) */}
+        <div className="sidebar-mobile">
+          <Sidebar isDarkMode={isDarkMode} />
+        </div>
+      </div>
+      
+      {/* Desktop Main Content */}
+      <div className="main-content-desktop">
         {renderActiveSection()}
       </div>
     </div>

@@ -58,15 +58,15 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
       { name: "CI/CD" },
       { name: "Unit/Integration Testing" },
       { name: "LaTeX" },
-      { name: "Arduino" },
+      { name: "ARM Keil MDK" },
       { name: "Pandas" },
-      { name: "STM32" },
+      { name: "STM32/STM32CubeIDE" },
       { name: "NumPy" },
       { name: "Scikit-learn" },
       { name: "RTOS (FreeRTOS)" },
       { name: "CAN Bus" },
       { name: "Intel Quartus Prime" },
-      { name: "Simulink" },
+      { name: "Multi-Threading" },
       { name: "OpenBCI" },
       { name: "MNE-Python" }
     ]

@@ -35,7 +35,7 @@ const AboutSection = ({ isDarkMode, onNavigate }) => {
           </p>
 
           <p>
-            I've lived in Italy, Brazil, Costa Rica, Canada, Switzerland, and now Germany—experiences that have shaped how I approach teamwork, communication, and engineering with a global mindset. In my free time, I enjoy hiking, surfing, and playing guitar.
+            I've lived in Italy, Brazil, Costa Rica, Canada, Switzerland, and now Germany—experiences that have shaped how I approach teamwork, communication, and engineering with a global mindset and open mind. In my free time, I enjoy hiking, surfing, triathlons, and playing guitar.
           </p>
 
           <p>

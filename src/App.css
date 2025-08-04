@@ -23,8 +23,14 @@ html {
   overflow: hidden;
 }
 
-/* Main content area styling */
-.main-content {
+/* Desktop Layout */
+.sidebar-desktop {
+  width: 300px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.main-content-desktop {
   flex: 1;
   position: relative;
   overflow-y: auto;
@@ -32,6 +38,81 @@ html {
   height: 100vh;
   background: var(--bg-tertiary);
   transition: background-color 0.3s ease;
+}
+
+/* Mobile Layout */
+.mobile-layout {
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-mobile {
+  display: none;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Desktop flex layout */
+@media (min-width: 769px) {
+  .App {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .mobile-layout {
+    display: none !important;
+  }
+  
+  .sidebar-mobile {
+    display: none !important;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+  
+  html {
+    overflow: auto;
+  }
+  
+  .App {
+    overflow: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .sidebar-desktop {
+    display: none !important;
+  }
+  
+  .main-content-desktop {
+    display: none !important;
+  }
+  
+  .mobile-layout {
+    display: flex !important;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+  
+  .sidebar-mobile {
+    display: block !important;
+    position: relative;
+    width: 100%;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    transition: background-color 0.3s ease;
+  }
 }
 
 /* Section wrapper to ensure proper spacing and layout */

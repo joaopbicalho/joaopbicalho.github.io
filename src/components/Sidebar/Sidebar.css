@@ -1,16 +1,18 @@
 .sidebar {
-  background: var(--bg-secondary);
-  border-radius: 20px;
+  background: var(--bg-tertiary);
+  border-radius: 0;
   padding: 30px;
   margin: 30px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  box-shadow: 0 10px 30px var(--shadow);
-  border: 1px solid var(--border-color);
-  height: fit-content;
+  gap: 10px;
+  box-shadow: none;
+  border: none;
+  border-right: 2px solid var(--bg-tertiary);
+  min-height: calc(100vh - 60px);
   position: sticky;
   top: 30px;
+  justify-content: space-between;
 }
 
 .profile-section {
@@ -18,13 +20,11 @@
 }
 
 .profile-image {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 15px;
+  border-radius: 0;
   overflow: hidden;
-  border: 4px solid var(--accent-color);
-  box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
 }
 
 .profile-image img {
@@ -34,17 +34,30 @@
 }
 
 .profile-info h2 {
-  color: var(--text-primary);
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 .designation {
-  color: var(--text-secondary);
+  color: #ffffff;
   font-size: 0.95rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
+}
+
+/* Desktop - show social links in title group, hide under profile */
+.profile-image-container {
+  display: contents;
+}
+
+.profile-image-container .social-links {
+  display: none;
+}
+
+.social-links-desktop {
+  display: flex;
 }
 
 .social-links {
@@ -56,15 +69,15 @@
 .social-links a {
   width: 40px;
   height: 40px;
-  background: var(--bg-tertiary);
-  border-radius: 50%;
+  background: #ffffff;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
+  color: #000000;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
+  border: 1px solid #000000;
 }
 
 .social-links a:hover {
@@ -78,6 +91,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+  margin-top: auto;
 }
 
 .contact-item-new {
@@ -121,6 +135,19 @@
   font-weight: 400;
   text-decoration: none;
   word-break: break-word;
+}
+
+/* Center location text when no label is present (desktop only) */
+.location-desktop .contact-details-new {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 35px;
+}
+
+.location-desktop .contact-details-new span {
+  line-height: 1;
+  margin: 0;
 }
 
 .contact-details-new a:hover {
@@ -173,27 +200,185 @@
   }
 }
 
+/* Desktop default - hide mobile contacts and email text */
+.contact-mobile,
+.email-text-mobile {
+  display: none;
+}
+
+/* Show desktop email text */
+.email-text-desktop {
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.email-text-desktop a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.email-text-desktop a:hover {
+  color: #00d4ff;
+}
+
+/* Adjust social links spacing for desktop - no bottom margin needed */
+.social-links {
+  margin-bottom: 0;
+}
+
+.title-and-contact-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.title-social-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .sidebar {
     padding: 20px;
     gap: 20px;
+    margin: 20px;
+    position: relative;
+    top: auto;
+    border-radius: 15px;
+    background: var(--bg-secondary);
+    min-height: auto;
+    justify-content: flex-start;
   }
   
   .profile-section {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+  }
+  
+  /* Create a container for profile image and social icons */
+  .profile-image-container {
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    gap: 10px;
+    width: 90px;
+    flex-shrink: 0;
   }
   
   .profile-image {
-    margin: 0 auto;
+    margin: 0;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Mobile - hide desktop social links, show under profile */
+  .social-links-desktop {
+    display: none !important;
+  }
+  
+  .profile-image-container .social-links {
+    display: flex !important;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .profile-info {
+    flex: 1;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .profile-info h2 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile layout: name/email/position on right, picture + social icons on left */
+  .title-and-contact-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .title-social-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+  }
+  
+  .designation {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  /* Show mobile email text, hide desktop email text */
+  .email-text-mobile {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .email-text-desktop {
+    display: none;
+  }
+  
+  .email-text-mobile a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+  }
+  
+  .email-text-mobile a:hover {
+    color: var(--accent-color);
   }
   
   .social-links {
     justify-content: center;
+    margin-top: 5px;
+    gap: 10px;
+    margin-bottom: 0;
   }
   
+  .social-links a {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+  
+  /* Hide mobile contact section (location removed) */
+  .contact-mobile {
+    display: none !important;
+  }
+  
+  .email-desktop,
+  .location-desktop {
+    display: none;
+  }
+  
+  /* Contact info section - now hidden on mobile */
   .contact-info {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    display: none;
   }
 }

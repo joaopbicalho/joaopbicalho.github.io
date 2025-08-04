@@ -180,7 +180,7 @@
 .top-navigation {
   display: flex;
   justify-content: flex-end;
-  padding: 1.5rem 0;
+  padding: 0.75rem 0;
   position: relative;
   z-index: 100;
 }
@@ -233,6 +233,10 @@
 }
 
 @media (max-width: 768px) {
+  .about-section {
+    margin-right: 0;
+  }
+  
   .section-header h1 {
     font-size: 2rem;
   }

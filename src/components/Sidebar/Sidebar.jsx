@@ -9,14 +9,11 @@ const Sidebar = ({ isDarkMode }) => {
   return (
     <div className="sidebar">
       <div className="profile-section">
-        <div className="profile-image">
-          <img src={profileImage} alt="Joao Pedro Bicalho" />
-        </div>
-        <div className="profile-info">
-          <h2>João Pedro Bicalho</h2>
-          <p className="designation">Software Engineer</p>
-          
-          {/* Social links - now including resume */}
+        <div className="profile-image-container">
+          <div className="profile-image">
+            <img src={profileImage} alt="Joao Pedro Bicalho" />
+          </div>
+          {/* Social links moved under profile picture for mobile */}
           <div className="social-links">
             <a href="https://github.com/joaopbicalho" target="_blank" rel="noopener noreferrer" title="GitHub">
               <FaGithub />
@@ -29,31 +26,55 @@ const Sidebar = ({ isDarkMode }) => {
             </a>
           </div>
         </div>
-      </div>
-      
-      {/* Updated contact info with new styling to match reference */}
-      <div className="contact-info">
-        <div className="contact-item-new">
-          <div className="contact-icon-new">
-            <MdOutlineEmail />
-          </div>
-          <div className="contact-details-new">
-            <span className="label-new">EMAIL</span>
-            <a href="mailto:joaopbandrade@gmail.com">joaopedrobicalho13@gmail.com</a>
+        <div className="profile-info">
+          <h2>João Pedro Bicalho</h2>
+          <div className="title-and-contact-row">
+            <div className="title-social-group">
+              <p className="designation">Software Engineer</p>
+              
+              {/* Desktop-only email text (no icon) */}
+              <div className="email-text-desktop">
+                <a href="mailto:joaopbandrade@gmail.com">joaopedrobicalho13@gmail.com</a>
+              </div>
+              
+              {/* Mobile-only email text (no icon) */}
+              <div className="email-text-mobile">
+                <a href="mailto:joaopbandrade@gmail.com">joaopedrobicalho13@gmail.com</a>
+              </div>
+              
+              {/* Social links for desktop only - mobile moved to profile-image-container */}
+              <div className="social-links social-links-desktop">
+                <a href="https://github.com/joaopbicalho" target="_blank" rel="noopener noreferrer" title="GitHub">
+                  <FaGithub />
+                </a>
+                <a href="https://www.linkedin.com/in/joaopedrobicalho/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                  <FaLinkedinIn />
+                </a>
+                <a href={`media/resume.pdf`} target="_blank" rel="noopener noreferrer" title="Resume">
+                  <FaFileAlt />
+                </a>
+              </div>
+            </div>
+            
+            {/* Location contact for mobile - now hidden */}
+            <div className="contact-mobile" style={{ display: 'none' }}>
+            </div>
           </div>
         </div>
-        
-        <div className="contact-item-new">
+      </div>
+      
+      {/* Updated contact info with new styling to match reference
+      <div className="contact-info">        
+        <div className="contact-item-new location-desktop">
           <div className="contact-icon-new">
             <MdOutlineLocationOn />
           </div>
           <div className="contact-details-new">
-            <span className="label-new">LOCATION</span>
             <span>Toronto, CA</span>
           </div>
         </div>
       </div>
-      
+       */}
 
     </div>
   );
