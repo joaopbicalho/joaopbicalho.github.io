@@ -269,19 +269,37 @@
 @media (max-width: 768px) {
   .portfolio-section {
     padding: 60px 0;
+    margin: 0;
+    max-width: 100vw;
+    width: 100vw;
+    box-sizing: border-box;
   }
 
   .top-navigation {
     justify-content: center;
-    padding: 1rem 1rem 0;
+    padding: 1rem 0.5rem 0;
+    margin-left: 0;
+    margin-right: 0;
   }
   
   .top-navigation nav ul {
     gap: 1rem;
   }
 
+  .section-header {
+    margin-left: 0.5rem;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
   .section-header h1 {
     font-size: 2.5rem;
+  }
+
+  .portfolio-content {
+    padding: 0 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .projects-grid {
@@ -300,8 +318,29 @@
 }
 
 @media (max-width: 480px) {
+  .portfolio-section {
+    margin: 0;
+    max-width: 100vw;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .top-navigation {
+    padding: 1rem 0.25rem 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .section-header {
+    margin-left: 0.25rem;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
   .portfolio-content {
-    padding: 0 15px;
+    padding: 0 0.25rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .section-header h1 {

@@ -24,7 +24,7 @@ const TruthSeekerNet = () => {
           This project aimed to develop a deep learning model capable of detecting deception from EEG signals. Inspired by recent work in brainwave-based lie detection, we leveraged the LieWaves dataset to train our own model, TruthSeekerNet. The project was completed as a group final report for the University of Toronto course APS360 (Deep Learning).
         </p>
         <div className="image-placeholder-regular">
-          <img src={`${import.meta.env.BASE_URL}media/overall_diagram.png`} alt="System Overview Diagram" />
+          <img src={`media/overall_diagram.png`} alt="System Overview Diagram" className='image' />
         </div>
       </section>
 
@@ -38,7 +38,7 @@ const TruthSeekerNet = () => {
       <section>
         <h2>TruthSeekerNet Architecture</h2>
         <div className="image-placeholder-regular">
-          <img src={`${import.meta.env.BASE_URL}media/lie_cnn.png`} alt="TruthSeekerNet Architecture Diagram" />
+          <img src={`media/lie_cnn.png`} alt="TruthSeekerNet Architecture Diagram" className='image' />
         </div>
         <p>
           TruthSeekerNet is a CNN+LSTM hybrid. It begins with two convolutional layers (16 and 32 filters) followed by max pooling. The output is reshaped and passed into an LSTM with 64 hidden units. Finally, a fully connected layer performs binary classification (lie/truth). Training used the Adam optimizer (lr=0.001) and Binary Cross-Entropy Loss. Early stopping with high patience helped mitigate overfitting.
@@ -48,7 +48,7 @@ const TruthSeekerNet = () => {
       <section>
         <h2>Evaluation on New EEG Data</h2>
         <div className="image-placeholder">
-          <img src={`${import.meta.env.BASE_URL}media/new_data_testing.jpg`} alt="Evaluation Results" />
+          <img src={`media/new_data_testing.jpg`} alt="Evaluation Results" className='image' />
         </div>
         <p>
           Data collected with the Muse EEG headset was processed similarly to LieWaves. Despite using different hardware, channel layout, and test protocols, the model generalized reasonably well. Accuracy on this new data exceeded the original dataset, suggesting improved detectability due to simplified conditions.
@@ -61,7 +61,7 @@ const TruthSeekerNet = () => {
           On the LieWaves dataset, the model achieved 60.0% validation accuracy and 58.5% on the test set. When applied to newly collected EEG data, it achieved 65.85% accuracy, likely due to more consistent stimulus timing during the custom trials. The model exhibited a bias toward classifying responses as deceptive.
         </p>
         <div className="image-placeholder">
-          <img src={`${import.meta.env.BASE_URL}media/confusion_matrix_lie.png`} alt="Confusion Matrix for Lie Detection" />
+          <img src={`media/confusion_matrix_lie.png`} alt="Confusion Matrix for Lie Detection" />
         </div>
       </section>
 

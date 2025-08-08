@@ -23,7 +23,7 @@ const ChirpletThesis = () => {
             <span>View Repository</span>
           </a>
           <a 
-            href={`${import.meta.env.BASE_URL}media/thesis.pdf`}
+            href={`media/thesis.pdf`}
             className="github-link" 
             target="_blank" 
             rel="noopener noreferrer"

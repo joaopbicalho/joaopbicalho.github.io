@@ -303,11 +303,35 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .gr-project {
-    padding: 1rem;
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .project-header {
+    margin-left: 0.5rem;
+    margin-right: 0;
+    padding-right: 0;
   }
   
   .project-header h1 {
     font-size: 2rem;
+  }
+
+  .project-content {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .project-section {
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   
   .equation-large {
@@ -322,6 +346,40 @@
   .equation-display {
     padding: 1rem;
     overflow-x: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .gr-project {
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .project-header {
+    margin-left: 0.25rem;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .project-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-content {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .project-section {
+    padding: 1rem 0.25rem 1rem 0.25rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 

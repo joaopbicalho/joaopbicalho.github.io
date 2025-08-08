@@ -81,10 +81,10 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
     // Physics Projects
     {
       id: 4,
-      title: "Muon Lifetime",
+      title: "Cosmic Ray Muon Lifetime",
       category: "physics",
       image: "media/Muon_full3.jpg",
-      description: "Experimental measurement of muon decay lifetime",
+      description: "Experimental measurement of cosmic ray muon decay lifetime",
       technologies: ["Cosmic Rays", "Liquid Scintillator Detector", "Muon Decay", "Oscilloscope Programming"],
       github: "#",
       live: "#"
@@ -95,7 +95,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
       category: "physics",
       image: "media/Comp.jpg",
       description: "Experimental determination of Compton scattering cross-section",
-      technologies: ["Nuclear Physics", "Gamma Spectroscopy", "Laboratory"],
+      technologies: ["Quantum Nuclear Physics", "Cesium-137 Radioactive Source", "Electron Scattering"],
       github: "#",
       live: "#"
     },
@@ -155,7 +155,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
       title: "Adaptive Chirplet Transform",
       category: "eeg-bci,ai",
       image: `media/lie_wallpaper.jpg`,
-      description: "Exploring the potential of ACT as a feature extraction method for EEG.",
+      description: "Undergraduate thesis:Exploring the potential of ACT as a feature extraction method for EEG.",
       technologies: ["Signal Processing", "Chirplet Transform", "EEG Analysis", "Deep Learning"],
       github: "#",
       live: "#"

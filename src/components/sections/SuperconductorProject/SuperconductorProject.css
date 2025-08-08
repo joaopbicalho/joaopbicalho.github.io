@@ -207,7 +207,8 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .project-detail {
-    padding: 1rem;
+    padding: 1rem 0;
+    margin: 0;
   }
 
   .project-header h1 {
@@ -215,7 +216,8 @@
   }
 
   .project-section {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
+    margin: 0;
   }
 
   .project-section h2 {
@@ -235,6 +237,18 @@
   .project-image {
     max-width: 95%;
     max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-detail {
+    padding: 0.5rem 0;
+    margin: 0;
+  }
+
+  .project-section {
+    padding: 1rem 0.5rem;
+    margin: 0;
   }
 }
 
