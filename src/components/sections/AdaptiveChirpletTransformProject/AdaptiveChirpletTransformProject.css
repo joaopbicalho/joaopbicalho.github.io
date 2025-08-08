@@ -2,7 +2,7 @@
 .project-detail {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a0e2a 50%, #261447 100%);
   color: #ffffff;
   line-height: 1.6;
@@ -11,14 +11,14 @@
 
 .project-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 0rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid #9f70ff;
+  border-bottom: 2px solid #00d4ff;
 }
 
 .project-header h1 {
   font-size: 3rem;
-  background: linear-gradient(135deg, #9f70ff 0%, #7a33ff 100%);
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -33,23 +33,57 @@
   font-weight: 300;
 }
 
+.github-repo-link {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.github-link:hover {
+  background: #00d4ff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.github-link svg {
+  font-size: 1.2rem;
+}
+
 .project-content {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .project-section {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 2rem;
-  border: 1px solid rgba(159, 112, 255, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.2);
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .project-section h2 {
-  color: #d9b3ff;
+  color: #00d4ff;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   display: flex;
@@ -58,7 +92,7 @@
 }
 
 .project-section h3 {
-  color: #bb86fc;
+  color: #0099cc;
   font-size: 1.4rem;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
@@ -81,8 +115,8 @@
 }
 
 .equation-box {
-  background: rgba(159, 112, 255, 0.1);
-  border: 1px solid #bb86fc;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid #00d4ff;
   border-radius: 10px;
   padding: 1.5rem;
   margin: 1.5rem 0;
@@ -96,20 +130,23 @@
 
 .equation-box p:first-child {
   font-weight: bold;
-  color: #bb86fc;
+  color: #00d4ff;
 }
 
 .setup-image-container {
   display: flex;
   justify-content: center;
   margin: 1.5rem 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .setup-image {
-  max-width: 80%;
+  max-width: 100%;
+  width: auto;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(159, 112, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
 }
 
 .results-image-container {
@@ -120,14 +157,39 @@
   justify-content: center;
   margin-top: 1rem;
   flex-wrap: wrap;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .results-image {
   max-width: 45%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(159, 112, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
 }
+
+.confusion-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.confusion-image {
+  max-width: 45%;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+  display: block;
+  margin: 0 auto;
+}
+
+.confusion-image:hover {
+  transform: none !important;
+}
+
 
 .result-explanation {
   max-width: 800px;
@@ -177,6 +239,11 @@
     max-width: 90%;
   }
 
+  .confusion-image {
+    max-width: 95%;
+    width: auto;
+  }
+
   .setup-image {
     max-width: 95%;
   }
@@ -197,5 +264,14 @@
 
   .project-section {
     padding: 1rem;
+  }
+
+  .confusion-image {
+    max-width: 100%;
+    width: auto;
+  }
+
+  .setup-image {
+    max-width: 100%;
   }
 }

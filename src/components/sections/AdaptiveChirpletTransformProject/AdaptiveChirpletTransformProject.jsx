@@ -1,5 +1,7 @@
 import React from "react";
+import { FaGithub, FaFilePdf } from 'react-icons/fa';
 import "katex/dist/katex.min.css";
+import "./AdaptiveChirpletTransformProject.css";
 import { InlineMath, BlockMath } from "react-katex";
 
 const ChirpletThesis = () => {
@@ -8,8 +10,28 @@ const ChirpletThesis = () => {
       <div className="project-header">
         <h1>Adaptive Chirplet Transform and Deep Learning Algorithms for EEG-based Sleep Stage Detection</h1>
         <p className="project-subtitle">
-          Exploring the potential of ACT as a feature extraction method for EEG-based sleep stage classification.
+          Undergraduate Thesis Supervised by Prof. Steve Mann, widely recognized as the father of wearable computing.
         </p>
+        <div className="github-repo-link" style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+          <a 
+            href="https://github.com/joaopbicalho/ACT-Thesis" 
+            className="github-link" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
+            <span>View Repository</span>
+          </a>
+          <a 
+            href={`${import.meta.env.BASE_URL}media/thesis.pdf`}
+            className="github-link" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <FaFilePdf />
+            <span>View Report</span>
+          </a>
+        </div>
       </div>
 
       <div className="project-content">
@@ -100,17 +122,6 @@ const ChirpletThesis = () => {
             <li><strong>Temporal Resolution:</strong> Labels provided for 30-second epochs</li>
           </ul>
 
-          <h3>Expert Labeling Protocol</h3>
-          <p>
-            The labeling process followed rigorous scientific standards to ensure data quality. Three expert sleep scorers independently 
-            analyzed each recording, following criteria developed by the Academy of Sleep Medicine. Labels required agreement from at least 
-            two of the three scorers. In cases where consensus was not achieved, a fourth expert was brought in to make the final decision.
-          </p>
-          <p>
-            This multi-expert approach was designed to reduce human error and disagreement in sleep scoring, addressing the inherent variability 
-            between experts when classifying sleep stages. Research indicates that inter-scorer agreement is approximately 85%, making this 
-            consensus-based approach crucial for reliable ground truth labels.
-          </p>
 
           <h3>Data Processing Considerations</h3>
           <p>
@@ -154,8 +165,6 @@ const ChirpletThesis = () => {
             <img
               src={`${import.meta.env.BASE_URL}media/act_window.png`}
               alt="Effect of Hamming Window on Signal Approximation"
-              width={600}
-              height={400}
               className="setup-image"
             />
           </div>
@@ -181,16 +190,6 @@ const ChirpletThesis = () => {
             <li><strong>Frequency:</strong> fc ∈ [0.6, 15] Hz in steps of 0.2</li>
             <li><strong>Dictionary Size:</strong> Over 1.4 million Gaussian chirplet functions</li>
           </ul>
-
-          <div className="setup-image-container">
-            <img
-              src="/images/act-diagram.png"
-              alt="Adaptive Chirplet Transform Process Diagram"
-              width={800}
-              height={400}
-              className="setup-image"
-            />
-          </div>
         </section>
 
         {/* GPU Implementation - New Comprehensive Section */}
@@ -244,6 +243,22 @@ const ChirpletThesis = () => {
         {/* Neural Networks - New Comprehensive Section */}
         <section className="project-section">
           <h2>Deep Learning Architecture: CNN-GRU Hybrid Model</h2>
+          
+          <h3>Complete Processing Pipeline</h3>
+          <p>
+            The full processing pipeline developed in this research consists of sequential stages: raw EEG acquisition, 
+            preprocessing with filtering and windowing, feature extraction using the Adaptive Chirplet Transform, 
+            convolutional processing of ACT features, and finally temporal sequence modeling using GRU for sleep 
+            stage classification.
+          </p>
+          
+          <div className="setup-image-container">
+            <img
+              src={`media/act_diagram.png`}
+              alt="Complete EEG Processing Pipeline: EEG → Preprocess → ACT → CNN → GRU → Sleep Stage"
+              className="setup-image"
+            />
+          </div>
           
           <h3>Input Data Preparation</h3>
           <p>
@@ -323,13 +338,11 @@ const ChirpletThesis = () => {
             discriminative features for sleep stage classification.
           </p>
 
-          <div className="results-image-container">
+          <div className="confusion-image-container">
             <img
               src="/media/confusion_matrix.png"
               alt="Confusion Matrix - Final Model Results"
-              width={300}
-              height={200}
-              className="results-image"
+              className="confusion-image"
             />
           </div>
 
