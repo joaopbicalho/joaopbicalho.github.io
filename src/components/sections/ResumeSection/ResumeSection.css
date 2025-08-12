@@ -248,6 +248,10 @@
     margin-right: 0;
   }
   
+  .timeline-section {
+    margin-right: 1rem;
+  }
+  
   .section-header h1 {
     font-size: 2rem;
   }
