@@ -70,17 +70,17 @@ export default function App() {
       
       {/* Mobile Layout Container */}
       <div className="mobile-layout">
-        {/* Top Sidebar - Mobile (only for About page) */}
-        {activeSection === 'about' && (
-          <div className="sidebar-mobile-top">
-            <Sidebar isDarkMode={isDarkMode} />
-          </div>
-        )}
-        
         {/* Main Content Area - Mobile */}
         <div className="main-content">
           {renderActiveSection()}
         </div>
+        
+        {/* Bottom Sidebar - Mobile (only for About page) */}
+        {activeSection === 'about' && (
+          <div className="sidebar-mobile-bottom">
+            <Sidebar isDarkMode={isDarkMode} />
+          </div>
+        )}
       </div>
       
       {/* Desktop Main Content */}

@@ -27,7 +27,7 @@ const AboutSection = ({ isDarkMode, onNavigate }) => {
           </p>
           
           <p>
-            My academic path included graduate-level courses in General Relativity, Particle Physics, and Computational Physics, alongside minors in Mechatronics, Robotics, and Artificial Intelligence. I developed signal processing pipelines and neural networks to classify sleep stages from EEG data—research that led to a conference paper at ICCCE and earned a conference Award.
+            My academic path included graduate-level courses in General Relativity, Particle Physics, and Computational Physics, alongside minors in Mechatronics, Robotics, and Artificial Intelligence. I developed signal processing pipelines and neural networks to classify sleep stages from EEG data. Research that led to a <a href="https://ieeexplore.ieee.org/document/10929845" target="_blank" rel="noopener noreferrer" className="paper-link">conference paper at ICCCE</a> and earned a conference Award.
           </p>
           
           <p>
@@ -35,11 +35,11 @@ const AboutSection = ({ isDarkMode, onNavigate }) => {
           </p>
 
           <p>
-            I've lived in Italy, Brazil, Costa Rica, Canada, Switzerland, and now Germany—experiences that have shaped how I approach teamwork, communication, and engineering with a global mindset and open mind. In my free time, I enjoy hiking, surfing, triathlons, and playing guitar.
+            I've lived in Italy, Brazil, Costa Rica, Canada, Switzerland, and now Germany. Experiences that have shaped how I approach teamwork, communication, and engineering with a global mindset and open mind. In my free time, I enjoy hiking, surfing, triathlons, and playing guitar.
           </p>
 
           <p>
-            I'm driven by curiosity—whether it's decoding brainwaves, simulating satellites, or understanding the universe at its core.
+            I'm driven by curiosity. Whether it's decoding brainwaves, simulating satellites, or understanding the universe at its core.
           </p>
         </div>
       </div>

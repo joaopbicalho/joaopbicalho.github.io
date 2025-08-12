@@ -68,6 +68,20 @@
   border: 1px solid var(--border-color);
 }
 
+.paper-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.paper-link:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent-color);
+  text-shadow: 0 0 8px rgba(139, 195, 74, 0.3);
+}
+
 .achievements-list {
   margin: 20px 0;
   padding-left: 0;

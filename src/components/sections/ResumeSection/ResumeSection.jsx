@@ -14,11 +14,22 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
 
   const experience = [
     {
+      year: "September 2025 - Present",
+      position: "Flight Software Engineer",
+      company: "The Exploration Company",
+      location: "Munich, Germany",
+      description: "Developing flight software for spacecraft systems, focusing on embedded systems programming and real-time software solutions for space exploration missions."
+    },
+    {
       year: "May 2024 - May 2025",
       position: "Research Assistant",
       company: "MannLab",
       location: "Toronto, Canada",
-      description: "Conducted research under Dr. Steve Mann, focusing on signal processing and machine learning for EEG data. Published a paper in IEEE ICCE 2025."
+      description: (
+        <>
+          Conducted research under Dr. Steve Mann, focusing on signal processing and machine learning for EEG data. Published a paper in IEEE ICCE 2025. <a href='https://ieeexplore.ieee.org/document/10929845' target='_blank' rel='noopener noreferrer' className='paper-link'>Read more</a>
+        </>
+      )
     },
     {
       year: "June 2023 - November 2023",

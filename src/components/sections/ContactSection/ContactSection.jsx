@@ -80,8 +80,8 @@ const ContactSection = ({ isDarkMode, onNavigate }) => {
         <div className="contact-info">
           <h2>Get In Touch</h2>
           <p>
-            I'm always open to discussing new opportunities and interesting projects. 
-            Feel free to reach out if you'd like to collaborate!
+            I'm always open to discussing new opportunities and interesting projects, but also love chatting about travel adventures, any of my work, or the places I've lived in. 
+            Feel free to reach out, I'd love to connect and hear your story too!
           </p>
         </div>
 
@@ -137,7 +137,7 @@ const ContactSection = ({ isDarkMode, onNavigate }) => {
                 <textarea
                   name="message"
                   placeholder="Your Message"
-                  rows="6"
+                  rows="10"
                   value={formData.message}
                   onChange={handleChange}
                   required

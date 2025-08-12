@@ -200,9 +200,10 @@
   }
 }
 
-/* Desktop default - hide mobile contacts and email text */
+/* Desktop default - hide mobile contacts, email text, and mobile social links */
 .contact-mobile,
-.email-text-mobile {
+.email-text-mobile,
+.social-links-mobile {
   display: none;
 }
 
@@ -259,7 +260,7 @@
   .profile-section {
     flex-direction: row;
     text-align: left;
-    align-items: flex-start;
+    align-items: center;
     gap: 15px;
     position: relative;
   }
@@ -268,7 +269,8 @@
   .profile-image-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
     width: 90px;
     flex-shrink: 0;
@@ -299,21 +301,26 @@
   
   .profile-info {
     flex: 1;
-    text-align: left;
+    text-align: center;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .profile-info h2 {
     font-size: 1.3rem;
     margin-bottom: 5px;
+    text-align: center;
   }
   
   /* Mobile layout: name/email/position on right, picture + social icons on left */
   .title-and-contact-row {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 8px;
     width: 100%;
   }
@@ -321,7 +328,7 @@
   .title-social-group {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 5px;
     width: 100%;
   }
@@ -329,28 +336,70 @@
   .designation {
     font-size: 0.9rem;
     margin-bottom: 5px;
-    text-align: left;
+    text-align: center;
   }
   
-  /* Show mobile email text, hide desktop email text */
+  /* Hide mobile email text, show mobile social links, hide desktop email text */
   .email-text-mobile {
-    display: block;
+    display: none;
+  }
+  
+  .social-links-mobile {
+    display: flex;
+    gap: 8px;
     margin-bottom: 10px;
+    justify-content: center;
+  }
+  
+  .social-links-mobile a {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    padding: 4px;
+    border-radius: 4px;
+  }
+  
+  /* GitHub icon - dark grey/black */
+  .social-links-mobile a[href*="github"] {
+    color: #333333;
+  }
+  
+  .social-links-mobile a[href*="github"]:hover {
+    color: #000000;
+    background-color: rgba(51, 51, 51, 0.1);
+  }
+  
+  /* LinkedIn icon - LinkedIn blue */
+  .social-links-mobile a[href*="linkedin"] {
+    color: #0077B5;
+  }
+  
+  .social-links-mobile a[href*="linkedin"]:hover {
+    color: #005885;
+    background-color: rgba(0, 119, 181, 0.1);
+  }
+  
+  /* Email icon - professional blue */
+  .social-links-mobile a[href*="mailto"] {
+    color: #1976D2;
+  }
+  
+  .social-links-mobile a[href*="mailto"]:hover {
+    color: #1565C0;
+    background-color: rgba(25, 118, 210, 0.1);
+  }
+  
+  /* Resume icon - professional black */
+  .social-links-mobile a[href*="resume"] {
+    color: #000000;
+  }
+  
+  .social-links-mobile a[href*="resume"]:hover {
+    color: #333333;
+    background-color: rgba(0, 0, 0, 0.1);
   }
   
   .email-text-desktop {
     display: none;
-  }
-  
-  .email-text-mobile a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s ease;
-  }
-  
-  .email-text-mobile a:hover {
-    color: var(--accent-color);
   }
   
   .social-links {
