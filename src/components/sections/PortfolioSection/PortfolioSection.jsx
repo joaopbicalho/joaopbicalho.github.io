@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GRProject from '../GeneralRelativityProject/GRProject';
 import RoboticArmProject from '../RoboticArmProject/RoboticArmProject';
 import RobotControlProject from '../RobotControlProject/RobotControlProject';
@@ -19,6 +19,19 @@ import './PortfolioSection.css';
 const PortfolioSection = ({ isDarkMode, onNavigate }) => {
   const [filter, setFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if viewport is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Extract your projects
   const adaptiveChirplet = {
@@ -185,7 +198,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
   ];
 
   // Combine projects in the desired order
-  const projects = [
+  let projects = [
     adaptiveChirplet,    // First
     generalRelativity,   // Second
     truthSeekerNet,      // Third
@@ -194,6 +207,21 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
       ![adaptiveChirplet.id, generalRelativity.id, truthSeekerNet.id, robotControl.id].includes(p.id)
     )
   ];
+
+  // Reorder for mobile: move High Energy Physics after Compton Cross Section
+  if (isMobile) {
+    const highEnergyIndex = projects.findIndex(p => p.title === "High Energy Physics");
+    const comptonIndex = projects.findIndex(p => p.title === "Measurement of Compton Cross Section");
+    
+    if (highEnergyIndex !== -1 && comptonIndex !== -1) {
+      // Remove High Energy Physics from its current position
+      const [highEnergyProject] = projects.splice(highEnergyIndex, 1);
+      // Find new Compton index after removal (if High Energy was before Compton)
+      const newComptonIndex = projects.findIndex(p => p.title === "Measurement of Compton Cross Section");
+      // Insert High Energy Physics right after Compton
+      projects.splice(newComptonIndex + 1, 0, highEnergyProject);
+    }
+  }
 
   const categories = [
     { key: 'all', label: 'All' },

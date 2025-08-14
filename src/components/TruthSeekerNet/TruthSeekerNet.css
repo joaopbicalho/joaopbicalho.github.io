@@ -49,50 +49,49 @@ p {
 }
 
 .image-placeholder {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px dashed #00c9ff;
-  padding: 2rem;
-  text-align: center;
-  font-style: italic;
-  color: #aaaaaa;
-  border-radius: 10px;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  background: transparent; /* CHANGED: transparent background instead of trying to match */
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
 .image-placeholder img {
-  max-width: 50%;
+  max-width: 40%; /* REDUCED: from 45% to 40% */
+  max-height: 300px; /* REDUCED: from 350px to 300px */
+  width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border: none;
+  box-shadow: none;
 }
 
 .image-placeholder-regular {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px dashed #00c9ff;
-  padding: 2rem;
-  text-align: center;
-  font-style: italic;
-  color: #aaaaaa;
-  border-radius: 10px;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  background: transparent; /* CHANGED: transparent background instead of trying to match */
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
 .image-placeholder-regular img {
-  max-width: 100%;
+  max-width: 70%; /* REDUCED: from 80% to 70% */
+  max-height: 400px; /* REDUCED: from 450px to 400px */
+  width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border: none;
+  box-shadow: none;
 }
 
+/* Also ensure the .image class doesn't have any problematic styling */
 .image {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
+  border: none;
+  box-shadow: none;
 }
 
 .github-repo-link {
@@ -167,7 +166,31 @@ p {
   }
 
   .image-placeholder {
-    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow: visible; /* CHANGED: from hidden to visible */
+    background: transparent;
+  }
+
+  .image-placeholder img {
+    max-width: 80%; /* REDUCED: from 85% to 80% */
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .image-placeholder-regular {
+    margin: 1.5rem 0;
+    overflow: visible; /* CHANGED: from hidden to visible */
+    background: transparent;
+  }
+
+  .image-placeholder-regular img {
+    max-width: 90%; /* REDUCED: from 98% to 90% */
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
 }
 

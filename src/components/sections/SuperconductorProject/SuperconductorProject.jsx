@@ -1,4 +1,5 @@
 import React from 'react';
+import './SuperconductorProject.css';
 
 // High Temperature Superconductor Experiment Page
 
@@ -49,10 +50,15 @@ export default function SuperconductorProject() {
         <section className="project-section">
           <h2>Instrumentation</h2>
           <ul>
-            <li><strong>Lock-in Amplifier:</strong> For precise resistance measurements using AC signals.</li>
-            <li><strong>Sand Cryostat:</strong> Maintains stable low temperatures using liquid nitrogen.</li>
-            <li><strong>Four-Probe Setup:</strong> Eliminates lead/contact resistance for accurate measurements.</li>
-            <li><strong>Thermocouple:</strong> Measures temperature directly at the sample surface.</li>
+            <li><strong>Lock-in Amplifier (L.I.A):</strong> For precise resistance measurements using AC signals. (On the left)</li>
+            <li><strong>Data Acquisition Device:</strong> Converts analog data to digital and stores it in the lab computer. (Above L.I.A)</li>
+            <li><strong>Decade Resistor Box:</strong> Provides variable resistance for circuit (L.I.A.) testing.</li>
+            <li><strong>Signal Generator:</strong> Provides the AC input signal for the lock-in amplifier.</li>
+            <li><strong>YBCO Sample:</strong> The high-temperature superconductor material being tested. (Inside stainless steel cylinder) </li>
+            <li><strong>Sand Cryostat:</strong> Maintains stable low temperatures, with sand as insulator and liquid nitrogen is poured in for trials. (The cylinder itself)</li>
+            <li><strong>Four-Probe Setup:</strong> Eliminates lead/contact resistance for accurate measurements. Yellow and red wires connected to the sample surface.</li>
+            <li><strong>Thermocouple:</strong> Measures temperature directly at the sample surface. Connected to the High Impedance Voltmeter</li>
+            <li><strong>High Impedance Voltmeter:</strong> Reads the small voltage from the thermocouple and sends it to the data acquisition system. (Instrument at the right)</li>
           </ul>
           
           {/* Simplified image container similar to Muon project */}
