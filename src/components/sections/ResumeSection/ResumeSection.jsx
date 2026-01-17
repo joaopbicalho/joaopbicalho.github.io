@@ -103,22 +103,6 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
       
       <div className="resume-content">
         <div className="timeline-section">
-          <h2><FaGraduationCap /> Education</h2>
-          <div className="timeline">
-            {education.map((item, index) => (
-              <div key={index} className="timeline-item">
-                <div className="timeline-year">{item.year}</div>
-                <div className="timeline-content">
-                  <h3>{item.degree}</h3>
-                  <h4>{item.institution}</h4>
-                  <p>{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="timeline-section">
           <h2><FaBriefcase /> Experience</h2>
           <div className="timeline">
             {experience.map((item, index) => (
@@ -127,6 +111,22 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
                 <div className="timeline-content">
                   <h3>{item.position}</h3>
                   <h4>{item.company} - {item.location}</h4>
+                  <p>{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="timeline-section">
+          <h2><FaGraduationCap /> Education</h2>
+          <div className="timeline">
+            {education.map((item, index) => (
+              <div key={index} className="timeline-item">
+                <div className="timeline-year">{item.year}</div>
+                <div className="timeline-content">
+                  <h3>{item.degree}</h3>
+                  <h4>{item.institution}</h4>
                   <p>{item.description}</p>
                 </div>
               </div>

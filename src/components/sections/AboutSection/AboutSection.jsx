@@ -23,6 +23,10 @@ const AboutSection = ({ isDarkMode, onNavigate }) => {
       <div className="about-content">
         <div className="about-text">
           <p>
+            I’m currently a Flight Software Engineer at The Exploration Company, a European aerospace startup developing Nyx, a modular and reusable spacecraft. My work focuses on designing and implementing mission-critical flight software in C++ that interfaces directly with the vehicle’s avionics, propulsion, and guidance systems.
+          </p>
+
+          <p>
             I'm an Engineering Physics graduate from the University of Toronto with a passion for fundamental physics, software engineering, EEG and neurotechnology, and space exploration.
           </p>
           

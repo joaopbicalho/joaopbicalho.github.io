@@ -14,6 +14,7 @@ import MuseEEGProject from '../MuseEEGProject/MuseEEGProject';
 import ChirpletThesis from '../AdaptiveChirpletTransformProject/AdaptiveChirpletTransformProject';
 import GomokuAIProject from '../GomokuProject/GomokuProject';
 import SemanticSimilarityProject from '../SemanticSimilarityProject/SemanticSimilarityProject';
+import AerospaceProject from '../AerospaceSection/AerospaceProject'; // FIXED: Changed from AerospaceProject to AerospaceSection
 import './PortfolioSection.css';
 
 const PortfolioSection = ({ isDarkMode, onNavigate }) => {
@@ -197,6 +198,19 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
 
   ];
 
+  const aerospaceProjects = [
+    {
+      id: 20,
+      title: "Flight Software & Aerospace Systems", // FIXED: Changed from "Flight Software"
+      category: "aerospace",
+      image: "media/satellite.jpg",
+      description: "Flight software for Low Earth Orbit (LEO) spacecraft.",
+      technologies: ["Hardware-in-the-Loop Simulation", "Sensor Drivers", "C++"],
+      github: "#",
+      live: "#"
+    }
+  ];
+
   // Combine projects in the desired order
   let projects = [
     adaptiveChirplet,    // First
@@ -205,7 +219,17 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
     robotControl,        // Fourth
     ...otherProjects.filter(p => 
       ![adaptiveChirplet.id, generalRelativity.id, truthSeekerNet.id, robotControl.id].includes(p.id)
-    )
+    ),
+    ...aerospaceProjects
+  ];
+
+  const categories = [
+    { key: 'all', label: 'All' },
+    { key: 'eeg-bci', label: 'EEG' },
+    { key: 'physics', label: 'Physics' },
+    { key: 'robotics', label: 'Robotics' },
+    { key: 'ai', label: 'AI' },
+    { key: 'aerospace', label: 'Aerospace' }
   ];
 
   // Reorder for mobile: move High Energy Physics after Compton Cross Section
@@ -222,14 +246,6 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
       projects.splice(newComptonIndex + 1, 0, highEnergyProject);
     }
   }
-
-  const categories = [
-    { key: 'all', label: 'All' },
-    { key: 'eeg-bci', label: 'EEG' },
-    { key: 'physics', label: 'Physics' },
-    { key: 'robotics', label: 'Robotics' },
-    { key: 'ai', label: 'AI' }
-  ];
 
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -289,6 +305,9 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
       case "Semantic Similarity System":
         setSelectedProject('semantic-similarity-project');
         break;
+      case "Flight Software & Aerospace Systems": // FIXED: Changed from "Flight Software" to match the title
+        setSelectedProject('aerospace-project');
+        break; // FIXED: Added missing break statement
       default:
         setSelectedProject(null);
         break;
@@ -316,7 +335,8 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
       'muse-eeg-project': <MuseEEGProject />,
       'adaptive-chirplet-transform-project': <ChirpletThesis />,
       'gomoku-project': <GomokuAIProject />,
-      'semantic-similarity-project': <SemanticSimilarityProject />
+      'semantic-similarity-project': <SemanticSimilarityProject />,
+      'aerospace-project': <AerospaceProject />
     };
 
     return (
@@ -331,6 +351,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
     );
   }
 
+  // If no project is selected, return the grid view
   return (
     <section id="projects" className="portfolio-section">
       {/* Top navigation */}

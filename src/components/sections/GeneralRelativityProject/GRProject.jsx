@@ -24,7 +24,7 @@ const GRProject = () => {
         <section className="project-section">
           <h2>Project Overview</h2>
           <p>
-            As part of my coursework in <strong>General Relativity</strong>, I developed
+            As part of my work in a graduate level <strong>General Relativity</strong> course, I developed
             computational tools for tensor calculations and spacetime analysis. Calculations in 
             general relativity can be extremely long, tedious, and time-consuming, which is why 
             most researchers use mathematical tools and calculators for computing important quantities 
