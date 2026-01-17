@@ -33,8 +33,8 @@ const AerospaceProject = () => {
             <p>Developing mission-critical software for the Nyx spacecraft. My responsibilities include:</p>
             <ul>
               <li>Implementing the Flight Software for the Propulsion System of Nyx Earth</li>
-              <li>Implementing the Flight Software for the Parachute Deployment Sequence and Pyro Activations</li>
-              <li>Implementing the Flight Software for Emergency Undocking and nose cap control</li>
+              <li>Implementing the Flight Software for the Parachute Deployment Sequence</li>
+              <li>Implementing the Flight Software for Emergency Undocking and Nose Cap Control</li>
             </ul>
           </div>
 
