@@ -11,7 +11,7 @@ const AerospaceProject = () => {
       <div className="project-content">
         <section className="project-section overview">
           <p>
-            My career is centered on developing robust, mission-critical software for the aerospace industry. While confidentiality agreements prevent me from detailing my current work, this page outlines my core competencies, key project experiences, and the technologies I use to solve complex engineering challenges.
+            My career has revolved around developing robust, mission-critical software for the aerospace industry. While confidentiality agreements prevent me from discussing any details of my previous or current work, this page outlines my core competencies, key project experiences, and the technologies I have used to solve complex engineering challenges.
           </p>
         </section>
 
@@ -40,7 +40,7 @@ const AerospaceProject = () => {
 
           {/* --- COACTUM SECTION --- */}
           <div className="highlight-item">
-            <h3>Flight Software Intern | Coactum</h3>
+            <h3>Flight Software Engineer | Coactum</h3>
             <p>As an early member of a startup developing an orbital transfer vehicle, I designed and built a comprehensive testbench and validation infrastructure for the flight software (OBSW).</p>
             <ul>
               <li>

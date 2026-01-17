@@ -201,9 +201,9 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
   const aerospaceProjects = [
     {
       id: 20,
-      title: "Flight Software & Aerospace Systems", // FIXED: Changed from "Flight Software"
+      title: "Flight Software & Aerospace Systems",
       category: "aerospace",
-      image: "media/satellite.jpg",
+      image: "media/aerospace_header.png",  
       description: "Flight software for Low Earth Orbit (LEO) spacecraft.",
       technologies: ["Hardware-in-the-Loop Simulation", "Sensor Drivers", "C++"],
       github: "#",
