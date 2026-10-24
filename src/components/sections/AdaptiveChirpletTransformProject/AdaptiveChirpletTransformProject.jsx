@@ -162,7 +162,7 @@ const ChirpletThesis = () => {
           </p>
 
           <div className="setup-image-container">
-            <img
+            <img loading="lazy" decoding="async"
               src={`${import.meta.env.BASE_URL}media/act_window.png`}
               alt="Effect of Hamming Window on Signal Approximation"
               className="setup-image"
@@ -253,7 +253,7 @@ const ChirpletThesis = () => {
           </p>
           
           <div className="setup-image-container">
-            <img
+            <img loading="lazy" decoding="async"
               src={`media/act_diagram.png`}
               alt="Complete EEG Processing Pipeline: EEG → Preprocess → ACT → CNN → GRU → Sleep Stage"
               className="setup-image"
@@ -339,7 +339,7 @@ const ChirpletThesis = () => {
           </p>
 
           <div className="confusion-image-container">
-            <img
+            <img loading="lazy" decoding="async"
               src="/media/confusion_matrix.png"
               alt="Confusion Matrix - Final Model Results"
               className="confusion-image"

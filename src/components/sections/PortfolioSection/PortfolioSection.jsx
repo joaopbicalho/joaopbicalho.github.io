@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import GRProject from '../GeneralRelativityProject/GRProject';
-import RoboticArmProject from '../RoboticArmProject/RoboticArmProject';
-import RobotControlProject from '../RobotControlProject/RobotControlProject';
-// import TrashCompactorProject from '../TrashCompactorProject/TrashCompactorProject';
-import MuonLifetimeProject from '../MuonLifetimeProject/MuonLifetimeProject';
-import HighEnergyPhysicsProject from '../HighEnergyPhysicsProject/HighEnergyPhysicsProject';
-import SuperconductorProject from '../SuperconductorProject/SuperconductorProject';
-import ElectronSpinResonanceProject from '../ElectronSpinResonanceProject/ElectronSpinResonanceProject';
-import ComptonCrossSectionProject from '../ComptonCrossSectionProject/ComptonCrossSectionProject';
-import TruthSeekerNet from '../../TruthSeekerNet/TruthSeekerNet';
-import MuseHeadbandReaderProject from '../MuseHeadbandReaderProject/MuseHeadbandReaderProject';
-import MuseEEGProject from '../MuseEEGProject/MuseEEGProject';
-import ChirpletThesis from '../AdaptiveChirpletTransformProject/AdaptiveChirpletTransformProject';
-import GomokuAIProject from '../GomokuProject/GomokuProject';
-import SemanticSimilarityProject from '../SemanticSimilarityProject/SemanticSimilarityProject';
-import AerospaceProject from '../AerospaceSection/AerospaceProject'; // FIXED: Changed from AerospaceProject to AerospaceSection
+import React, { lazy, Suspense, useState, useEffect } from 'react';
 import SectionNav from '../../SectionNav/SectionNav';
 import { formatHash } from '../../../routing';
 import './PortfolioSection.css';
+
+// Each project page is its own chunk, fetched only when that project is opened.
+// Loading all fifteen up front put every page — and KaTeX, which only the
+// chirplet thesis uses — into the bundle every visitor downloads.
+const GRProject = lazy(() => import('../GeneralRelativityProject/GRProject'));
+const RoboticArmProject = lazy(() => import('../RoboticArmProject/RoboticArmProject'));
+const RobotControlProject = lazy(() => import('../RobotControlProject/RobotControlProject'));
+const MuonLifetimeProject = lazy(() => import('../MuonLifetimeProject/MuonLifetimeProject'));
+const HighEnergyPhysicsProject = lazy(() => import('../HighEnergyPhysicsProject/HighEnergyPhysicsProject'));
+const SuperconductorProject = lazy(() => import('../SuperconductorProject/SuperconductorProject'));
+const ElectronSpinResonanceProject = lazy(() => import('../ElectronSpinResonanceProject/ElectronSpinResonanceProject'));
+const ComptonCrossSectionProject = lazy(() => import('../ComptonCrossSectionProject/ComptonCrossSectionProject'));
+const TruthSeekerNet = lazy(() => import('../../TruthSeekerNet/TruthSeekerNet'));
+const MuseHeadbandReaderProject = lazy(() => import('../MuseHeadbandReaderProject/MuseHeadbandReaderProject'));
+const MuseEEGProject = lazy(() => import('../MuseEEGProject/MuseEEGProject'));
+const ChirpletThesis = lazy(() => import('../AdaptiveChirpletTransformProject/AdaptiveChirpletTransformProject'));
+const GomokuAIProject = lazy(() => import('../GomokuProject/GomokuProject'));
+const SemanticSimilarityProject = lazy(() => import('../SemanticSimilarityProject/SemanticSimilarityProject'));
+const AerospaceProject = lazy(() => import('../AerospaceSection/AerospaceProject'));
 
 /**
  * Detail page for each project slug. The slug is also the URL segment
@@ -66,8 +69,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
     image: `media/lie_wallpaper.jpg`,
     description: "Time-frequency decomposition methods for non-stationary signals",
     technologies: ["Signal Processing", "Chirplet Transform", "EEG Analysis", "Deep Learning"],
-    github: "#",
-    live: "#"
   };
   
   const generalRelativity = {
@@ -78,8 +79,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
     image: `media/general-rel.png`,
     description: "Python code to calculate tensors based on spacetime metrics",
     technologies: ["Mathematical Physics", "Tensor Calculus", "Python"],
-    github: "#",
-    live: "#"
   };
   
   const truthSeekerNet = {
@@ -90,8 +89,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
     image: `media/lies.jpeg`,
     description: "EEG-based lie detection system using neural signals",
     technologies: ["Python", "EEG", "Signal Processing", "Machine Learning"],
-    github: "#",
-    live: "#"
   };
   
   const robotControl = {
@@ -102,8 +99,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
     image: "media/robot_control_wp.png",
     description: "Robot kinematics, control, and motion planning with the KUKA robotic arm",
     technologies: ["MATLAB", "DH Convention", "Control Theory", "Forward and Inverse Kinematics"],
-    github: "#",
-    live: "#"
   };
 
   // Define the rest of your projects
@@ -117,8 +112,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/coin_wpp2.png",
       description: "Automated robotic arm system for coin selection and sorting",
       technologies: ["Python", "TinyML", "Servo Motors", "Raspberry Pi"],
-      github: "#",
-      live: "#"
     },
     // Physics Projects
     {
@@ -129,8 +122,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/Muon_full3.jpg",
       description: "Experimental measurement of cosmic ray muon decay lifetime",
       technologies: ["Cosmic Rays", "Liquid Scintillator Detector", "Muon Decay", "Oscilloscope Programming"],
-      github: "#",
-      live: "#"
     },
     {
       id: 9,
@@ -140,8 +131,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/Comp.jpg",
       description: "Experimental determination of Compton scattering cross-section",
       technologies: ["Quantum Nuclear Physics", "Cesium-137 Radioactive Source", "Electron Scattering"],
-      github: "#",
-      live: "#"
     },
     {
       id: 7,
@@ -151,8 +140,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/ESR_main.jpg",
       description: "ESR spectroscopy analysis and magnetic field studies",
       technologies: ["Quantum Mechanics", "Oscilloscope", "Waveguides", "Microwave Instrumentation"],
-      github: "#",
-      live: "#"
     },
     {
       id: 6,
@@ -162,8 +149,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/htck_full.jpg",
       description: "Study of high-temperature superconducting materials",
       technologies: ["Condensed Matter Physics", "Cryogenics", "Lock-In Amplifier"],
-      github: "#",
-      live: "#"
     },
     {
       id: 5,
@@ -173,8 +158,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/bubble_chamber.png",
       description: "Analysis of bubble chamber images from pion-proton collisions to identify particle interactions",
       technologies: ["Charged Particle Track Analysis", "Relativistic Kinematics"],
-      github: "#",
-      live: "#",
     },
     // EEG/BCI Projects
     // TruthSeekerNet is defined above as `truthSeekerNet`, which the ordered
@@ -187,8 +170,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/muse.jpg",
       description: "Real-time EEG data acquisition and processing from Muse headband via UDP/OSC",
       technologies: ["Python", "UDP/OSC", "MNE-Python", "Signal Processing", "EEG"],
-      github: "#",
-      live: "#"
     },
     // Adaptive Chirplet Transform is defined above as `adaptiveChirplet`, for
     // the same reason as TruthSeekerNet.
@@ -201,8 +182,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/semantic.png",
       description: "NLP system for vocabulary questions using cosine similarity",
       technologies: ["Python", "NLP", "Vector Semantics", "Cosine Similarity"],
-      github: "#",
-      live: "#"
     },
     {
       id: 13,
@@ -212,8 +191,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/gomoku.png",
       description: "AI-powered Gomoku game with intelligent opponent",
       technologies: ["Python", "Game AI", "Minimax", "Alpha-Beta Pruning"],
-      github: "#",
-      live: "#"
     },
 
   ];
@@ -227,8 +204,6 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
       image: "media/aerospace_header.png",  
       description: "Flight software at The Exploration Company for Nyx, an ISS cargo delivery spacecraft, and at Coactum for an orbital transfer vehicle",
       technologies: ["C++", "FDIR", "Hardware Drivers", "Propulsion Flight Software", "Hardware-in-the-Loop Testing", "Aerospace Systems"],
-      github: "#",
-      live: "#"
     }
   ];
 
@@ -309,7 +284,9 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
             ← Back to Portfolio
           </button>
         </div>
-        <ProjectPage />
+        <Suspense fallback={<div className="project-loading">Loading project…</div>}>
+          <ProjectPage />
+        </Suspense>
       </div>
     );
   }
@@ -357,11 +334,8 @@ const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseP
                   loading={index < 4 ? 'eager' : 'lazy'}
                   decoding="async"
                 />
-                <div className="project-overlay">
-                  <div className="project-links">
-                    {/* GitHub links removed from all project cards */}
-                  </div>
-                </div>
+                {/* Dims the image on hover; the card itself is the link. */}
+                <div className="project-overlay" />
               </div>
               
               <div className="project-info">

@@ -16,8 +16,9 @@ const AboutSection = ({ onNavigate }) => {
           <p>
             I’m a Flight Software Engineer at The Exploration Company in Munich, working on
             Nyx — a modular, reusable spacecraft scheduled to dock to the ISS in 2028. I write the
-            propulsion flight software and act as the software team’s point of contact for the
-            propulsion and sequential subsystems.
+            flight software for propulsion and for sequential — the separation and deployment
+            events the vehicle gets one attempt at — and act as the software team’s point of
+            contact for both.
           </p>
 
           <p>

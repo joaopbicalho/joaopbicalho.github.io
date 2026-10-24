@@ -63,9 +63,11 @@ export default function SuperconductorProject() {
           
           {/* Simplified image container similar to Muon project */}
           <div className="project-image-wrapper">
-            <img 
-              src="/media/htck_full.jpg" 
-              alt="HTCK Overview" 
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/media/htck_full.jpg"
+              alt="HTCK Overview"
               className="project-image"
             />
             <p className="image-caption">

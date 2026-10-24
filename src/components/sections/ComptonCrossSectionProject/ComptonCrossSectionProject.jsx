@@ -36,7 +36,7 @@ const ComptonCrossSectionProject = () => {
             The core components of the experiment included:
           </p>
           <div className="setup-image-container">
-            <img src="/media/comp_setup.png" alt="Compton Scattering Experimental Setup" className="setup-image" />
+            <img loading="lazy" decoding="async" src="/media/comp_setup.png" alt="Compton Scattering Experimental Setup" className="setup-image" />
           </div>
           <ul>
             <li><strong>Cs-137 Gamma Source (662 keV):</strong> Provided high-energy monoenergetic photons</li>
@@ -84,7 +84,7 @@ const ComptonCrossSectionProject = () => {
             <h3>Representative Result Graphs</h3>
             
             <div className="individual-result">
-              <img src="/media/copper_exp.png" alt="Photon Count vs Thickness" className="single-result-image" />
+              <img loading="lazy" decoding="async" src="/media/copper_exp.png" alt="Photon Count vs Thickness" className="single-result-image" />
               <p className="result-explanation">
                 This graph demonstrates the exponential decay relationship between photon intensity and absorber thickness for copper. 
                 The decay reflects that detected photons are those that traversed the absorber without electron interactions. 
@@ -93,7 +93,7 @@ const ComptonCrossSectionProject = () => {
             </div>
             
             <div className="individual-result">
-              <img src="/media/cross_section_v_z.png" alt="Cross Section vs Atomic Number" className="single-result-image" />
+              <img loading="lazy" decoding="async" src="/media/cross_section_v_z.png" alt="Cross Section vs Atomic Number" className="single-result-image" />
               <p className="result-explanation">
                 This plot shows the total photon cross-section as a function of atomic number Z for all tested materials. 
                 The linear relationship allows extraction of the Compton scattering component, which was used to calculate 

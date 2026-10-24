@@ -5,7 +5,11 @@
   box-sizing: border-box;
 }
 
-/* CSS Custom Properties (Variables) - Dark Theme (Default) */
+/* CSS Custom Properties (Variables).
+   The site is deliberately dark-only: there was a light palette here, but most
+   component CSS hardcodes dark colours rather than using these tokens, so the
+   light theme never rendered correctly. Reintroducing one means converting
+   those hardcoded values to tokens first. */
 :root, [data-theme="dark"] {
   --text-primary: #ffffff;
   --text-secondary: #e0e0e0;
@@ -33,25 +37,6 @@
   /* Comfortable line length for body copy: prose wider than this is tiring to
      read, and on a wide laptop every column here used to run the full width. */
   --measure: 68ch;
-}
-
-/* Light Theme Variables */
-[data-theme="light"] {
-  --text-primary: #2c3e50;
-  --text-secondary: #34495e;
-  --text-muted: #7f8c8d;
-
-  --accent-color: #0b7ec4;
-  --accent-hover: #095e93;
-  --accent-soft: rgba(11, 126, 196, 0.1);
-  --accent-border: rgba(11, 126, 196, 0.3);
-
-  --bg-tertiary: #ffffff;
-  --bg-primary: #f5f7f9;
-  --bg-secondary: #eaeef2;
-
-  --border-color: #d6dce2;
-  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 body {

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback } from 'react'
 import './App.css'
 import Sidebar from './components/Sidebar/Sidebar'
 import AboutSection from './components/sections/AboutSection/AboutSection'
@@ -9,17 +9,6 @@ import useHashRoute from './useHashRoute'
 
 export default function App() {
   const { route, navigate, goBack } = useHashRoute();
-  // The theme switcher is currently disabled, so this only ever reads the stored
-  // preference. Re-enabling it means adding the setter back and rendering
-  // <ThemeToggle isDarkMode={isDarkMode} toggleTheme={...} /> in the shell below.
-  const [isDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? savedTheme === 'dark' : true;
-  });
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-  }, [isDarkMode]);
 
   /** Top navigation: jump to a section, leaving any open project behind. */
   const handleNavigate = useCallback(

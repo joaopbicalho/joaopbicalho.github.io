@@ -79,7 +79,7 @@ const GomokuAIProject = () => {
         <section className="project-section">
           <h2>Sample Board Output</h2>
           <div className="setup-image-container">
-            <img
+            <img loading="lazy" decoding="async"
               className="setup-image"
               src="media/gomoku_board.png"
               alt="Text-based Gomoku board in terminal"

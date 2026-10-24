@@ -326,3 +326,14 @@
     font-size: 0.85rem;
   }
 }
+
+/* Shown while a project page's chunk is being fetched. Kept tall enough that
+   the back button does not jump when the real page arrives. */
+.project-loading {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+}

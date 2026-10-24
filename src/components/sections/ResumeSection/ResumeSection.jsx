@@ -19,7 +19,7 @@ const ResumeSection = ({ onNavigate }) => {
       position: "Flight Software Engineer",
       company: "The Exploration Company",
       location: "Munich, Germany",
-      description: "Safety critical C++ flight software for Nyx, a modular and reusable spacecraft scheduled to dock to the ISS in 2028. Point of contact in the FSW team for the Propulsion and Sequential subsystems, working directly with propulsion, avionics, and GNC engineers."
+      description: "Safety critical C++ flight software for Nyx, a modular and reusable spacecraft scheduled to dock to the ISS in 2028. Point of contact in the FSW team for the Propulsion and Sequential subsystems (launcher separation detection, service module separation, parachute deployment, contingency undocking), working directly with propulsion, avionics, and GNC engineers."
     },
     {
       year: "May 2024 - May 2025",
@@ -52,26 +52,28 @@ const ResumeSection = ({ onNavigate }) => {
     // Languages live in here rather than in a category of their own: "C++" on a
     // list says very little, so it sits next to what it is actually used for.
     flightSoftware: [
-      { name: "C++ (17/20)" },
+      { name: "C++ (17)" },
       { name: "C" },
       { name: "ARM Assembly" },
       { name: "Python" },
       { name: "Real-time embedded systems" },
       { name: "RTOS" },
       { name: "Bare-metal firmware" },
-      { name: "Multi-threading & synchronisation" },
-      { name: "State machines & sequencing" },
+      { name: "Multi-threading" },
+      { name: "State machines" },
       { name: "FDIR" },
       { name: "Hardware drivers" },
+      { name: "FPGA interfacing" },
       { name: "SpaceWire" },
+      { name: "RS-485" },
       { name: "Hardware-in-the-loop testing" },
       { name: "Fault injection" },
       { name: "Bazel" },
-      { name: "GDB (on-target debugging)" }
+      { name: "GDB" }
     ],
     languages: [
-      { name: "Portuguese" },
       { name: "English" },
+      { name: "Portuguese" },
       { name: "Spanish" }
     ],
     technologies: [

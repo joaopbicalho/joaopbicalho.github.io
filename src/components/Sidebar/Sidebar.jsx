@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedinIn, FaFileAlt } from 'react-icons/fa';
-import { MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/md';
+import { MdOutlineEmail } from 'react-icons/md';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -63,26 +63,10 @@ const Sidebar = () => {
                 </a>
               </div>
             </div>
-            
-            {/* Location contact for mobile - now hidden */}
-            <div className="contact-mobile" style={{ display: 'none' }}>
-            </div>
           </div>
         </div>
       </div>
       
-      {/* Desktop only: .contact-info and .location-desktop are hidden under the
-          mobile breakpoint, where the social row already carries the contacts. */}
-      <div className="contact-info">
-        <div className="contact-item-new location-desktop">
-          <div className="contact-icon-new">
-            <MdOutlineLocationOn />
-          </div>
-          <div className="contact-details-new">
-            <span>Munich, Germany</span>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

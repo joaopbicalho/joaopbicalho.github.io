@@ -38,13 +38,13 @@ const AerospaceProject = () => {
           </p>
           <ul className="expertise-list">
             <li>
-              <strong>Modern C++ (17/20):</strong> RAII and clear ownership, strong typing
+              <strong>Modern C++ (17):</strong> RAII and clear ownership, strong typing
               over raw values for physical quantities and hardware registers, and interfaces
               narrow enough to be mocked in tests.
             </li>
             <li>
               <strong>Real-time and embedded constraints:</strong> Writing for RTOS targets
-              (FreeRTOS) and bare-metal microcontrollers, where timing and memory behaviour
+              and bare-metal microcontrollers, where timing and memory behaviour
               matter as much as correctness.
             </li>
             <li>
@@ -52,8 +52,10 @@ const AerospaceProject = () => {
               periodic tasks, and the synchronisation needed to keep that state consistent.
             </li>
             <li>
-              <strong>Hardware interfaces:</strong> Sensor and actuator drivers over CAN bus
-              and SpaceWire, and the serialisation layers that sit above them.
+              <strong>Hardware interfaces:</strong> Drivers for navigation sensors,
+              actuators, avionics boxes and FPGA-based units, over links such as
+              SpaceWire, Ethernet and RS-485, and the serialisation layers that sit
+              above them.
             </li>
             <li>
               <strong>Sequencing and state machines:</strong> Deployment, separation and
@@ -79,7 +81,13 @@ const AerospaceProject = () => {
           <h2>Current Work — The Exploration Company</h2>
           <div className="highlight-item">
             <p>
-              Nyx is a modular, reusable orbital vehicle. I am responsible for the flight software for the Propulsion and Sequential subsystems, and the point of contact from the software team for the Propulsion and Sequential teams. My work includes:
+              Nyx is a modular, reusable orbital vehicle. I am responsible for the
+              flight software for the Propulsion and Sequential subsystems, and I am
+              the software team’s point of contact for both teams. Sequential groups
+              the vehicle’s one-shot separation and deployment events — launcher
+              separation detection, service module separation, parachute deployment
+              and contingency undocking — each of which runs as an explicit, timed
+              state machine. My work includes:
             </p>
             <ul>
               <li>
@@ -96,10 +104,18 @@ const AerospaceProject = () => {
                 system.
               </li>
               <li>
+                <strong>Launcher separation detection:</strong> Software for detecting
+                separation from the launch vehicle.
+              </li>
+              <li>
+                <strong>Service module separation:</strong> Software for the separation
+                sequence.
+              </li>
+              <li>
                 <strong>Parachute deployment:</strong> Software for the deployment sequence.
               </li>
               <li>
-                <strong>Emergency undocking and nose cap control.</strong>
+                <strong>Contingency undocking and nose cap control.</strong>
               </li>
             </ul>
           </div>
@@ -144,13 +160,15 @@ const AerospaceProject = () => {
         <section className="project-section technologies">
           <h2>Core Technologies & Tools</h2>
           <div className="tech-tags">
-            <span className="tech-tag">C++ (17/20)</span>
+            <span className="tech-tag">C++ (17)</span>
             <span className="tech-tag">C</span>
             <span className="tech-tag">Python</span>
-            <span className="tech-tag">RTOS / FreeRTOS</span>
+            <span className="tech-tag">RTOS</span>
             <span className="tech-tag">Multi-threading</span>
-            <span className="tech-tag">CAN bus</span>
+            <span className="tech-tag">FPGA interfacing</span>
             <span className="tech-tag">SpaceWire</span>
+            <span className="tech-tag">Ethernet</span>
+            <span className="tech-tag">RS-485</span>
             <span className="tech-tag">Hardware-in-the-loop</span>
             <span className="tech-tag">STM32</span>
             <span className="tech-tag">Linux</span>

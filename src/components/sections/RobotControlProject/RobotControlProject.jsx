@@ -23,7 +23,7 @@ const RobotControlProject = () => {
             The KUKA robotic arm used in this project is a 6-degree-of-freedom articulated manipulator with a three-axis wrist and a gripper.
           </p>
           <div className="diagram-container">
-            <img src={`media/robot_arm_diagram.png`} alt="KUKA Robotic Arm Diagram" />
+            <img loading="lazy" decoding="async" src={`media/robot_arm_diagram.png`} alt="KUKA Robotic Arm Diagram" />
           </div>
         </section> 
 
@@ -118,7 +118,7 @@ const RobotControlProject = () => {
             Using the calibrated robot model and inverse kinematics, I implemented functions to make the robot draw patterns on paper, including line segments, circles, and creative patterns such as the water jar seen below.
           </p>
           <div className="image-container">
-            <img src={`media/ECE470_jar.jpg`} alt="Pattern Drawing Example" />  
+            <img loading="lazy" decoding="async" src={`media/ECE470_jar.jpg`} alt="Pattern Drawing Example" />  
           </div>
         </section>
 
@@ -178,7 +178,7 @@ const RobotControlProject = () => {
             insights into the robot's dynamics and helped identify potential issues before physical implementation.
           </p>
           <div className="video-container">
-            <video controls>
+            <video controls preload="none">
               <source src={`media/robot_control_sim.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -195,7 +195,7 @@ const RobotControlProject = () => {
             The culmination of the project was implementing motion planning for object manipulation while avoiding obstacles. The task involved setting up obstacles, defining waypoints, and executing the planned trajectory with the KUKA robot.
           </p>
           <div className="video-container">
-            <video controls>
+            <video controls preload="none">
               <source src={`media/motionplanning.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>

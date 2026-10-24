@@ -80,8 +80,8 @@ const ComptonScatteringProject = () => {
           <div className="results-placeholder">
             <h3>Representative Result Graphs</h3>
             <div className="results-image-container">
-              <img src="/media/compton_decay_plot.jpg" alt="Photon Count vs Thickness" className="results-image" />
-              <img src="/media/compton_cross_section_fit.jpg" alt="Cross Section vs Atomic Number" className="results-image" />
+              <img loading="lazy" decoding="async" src="/media/compton_decay_plot.jpg" alt="Photon Count vs Thickness" className="results-image" />
+              <img loading="lazy" decoding="async" src="/media/compton_cross_section_fit.jpg" alt="Cross Section vs Atomic Number" className="results-image" />
             </div>
           </div>
         </section>

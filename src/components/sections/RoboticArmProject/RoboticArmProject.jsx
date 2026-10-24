@@ -28,7 +28,7 @@ export default function RoboticArmProject() {
             Below is an image of the final design of the robotic arm system:
           </p>
           <div className="setup-image-container">
-            <img
+            <img loading="lazy" decoding="async"
             src={`media/robotic_arm_fd.png`}
             alt="Robotic Arm Side View"
             className="setup-image"
@@ -46,7 +46,7 @@ export default function RoboticArmProject() {
           </p>
 
           <div className="setup-image2-container">
-            <img
+            <img loading="lazy" decoding="async"
               src={`media/robot_coin_cad.png`}
               alt="Robotic Arm Diagram" className="setup-image2"
             />
@@ -77,7 +77,7 @@ export default function RoboticArmProject() {
           </p>
          
           <div className="setup-video-container">
-            <video controls className="setup-video">
+            <video controls preload="none" className="setup-video">
               <source src={'media/demo_coin_ai_2.mp4'} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -89,7 +89,7 @@ export default function RoboticArmProject() {
           </p>
 
           <div className="setup-image-container">
-            <img src={`media/coin_fsm.png`} alt="Robotic Arm FSM" className="setup-image" />
+            <img loading="lazy" decoding="async" src={`media/coin_fsm.png`} alt="Robotic Arm FSM" className="setup-image" />
           </div>
 
         </section>
@@ -100,7 +100,7 @@ export default function RoboticArmProject() {
             The system successfully sorted coins in manual and semi-autonomous modes. A trained YOLO model identified coins in real time. Manual mode allowed precise control of each joint and the solenoid via keyboard inputs. Autonomous mode used a lookup table for motion planning, though accuracy varied. Lookup interpolation and detection filtering improved performance, but full autonomy required further development.
           </p>
           <div className="results-video-container">
-            <video controls className="results-video">
+            <video controls preload="none" className="results-video">
               <source src={"media/robot_arm_final.mp4"} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
