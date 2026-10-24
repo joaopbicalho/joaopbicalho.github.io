@@ -166,7 +166,7 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 8px;
 }
 
@@ -178,7 +178,15 @@
   transition: all 0.3s ease;
   text-align: center;
   font-size: 0.9rem;
-  white-space: nowrap;
+  /* The long entries ("Hardware-in-the-loop testing", "Real-time embedded
+     systems") used to be nowrap, so they ran straight out of the card. They
+     wrap instead; hyphens let the hyphenated terms break at the hyphen, and
+     centring keeps a one-line chip aligned with a two-line neighbour. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .skill-item:hover {
@@ -218,7 +226,7 @@
   }
 
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
     gap: 8px;
   }
 
