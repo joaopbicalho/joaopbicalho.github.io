@@ -1,0 +1,80 @@
+/*
+ * Styles for the shared section nav. These rules used to be copy-pasted into
+ * AboutSection.css, ResumeSection.css, PortfolioSection.css and
+ * ContactSection.css; they now live here only.
+ */
+
+.top-navigation {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.35rem 0;
+  position: relative;
+  z-index: 100;
+}
+
+.top-navigation nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.top-navigation nav ul li a {
+  /* inline-block + padding gives the links a finger-sized tap target without
+     moving the text: the padding-bottom is what the active underline sits on. */
+  display: inline-block;
+  padding: 0.4rem 0.25rem 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.top-navigation nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+.top-navigation nav ul li a:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.top-navigation nav ul li a.active {
+  color: var(--text-primary);
+  position: relative;
+}
+
+.top-navigation nav ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.25rem;
+  right: 0.25rem;
+  height: 2px;
+  background: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .top-navigation {
+    justify-content: center;
+  }
+
+  .top-navigation nav ul {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .top-navigation nav ul {
+    gap: 0.6rem;
+  }
+
+  .top-navigation nav ul li a {
+    font-size: 0.95rem;
+  }
+}

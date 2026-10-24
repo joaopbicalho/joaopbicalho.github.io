@@ -3,7 +3,7 @@ import { FaPython, FaJs, FaReact, FaGitAlt } from 'react-icons/fa';
 import { SiArduino, SiTensorflow, SiOpencv } from 'react-icons/si';
 import './Skills.css';
 
-const Skills = ({ isDarkMode }) => {
+const Skills = () => {
   const skills = [
     {
       category: 'Programming Languages',

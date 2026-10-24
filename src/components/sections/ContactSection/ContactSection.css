@@ -1,52 +1,12 @@
 .contact-section {
   animation: fadeIn 0.5s ease-in-out;
-  padding: 0 2rem;
+  /* No side padding of its own: the gutter comes from .app-main, and the 3rem
+     right margin matches About, Resume and Portfolio so the nav and the heading
+     land in the same place on every tab. */
+  padding: 0;
+  margin-right: 3rem;
   background: var(--bg-tertiary);
   color: #ffffff;
-}
-
-/* Top Navigation Styles */
-.top-navigation {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.75rem 0;
-  position: relative;
-  z-index: 100;
-}
-
-.top-navigation nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2rem;
-}
-
-.top-navigation nav ul li a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.top-navigation nav ul li a:hover {
-  color: var(--accent-color);
-}
-
-.top-navigation nav ul li a.active {
-  color: var(--text-primary);
-  position: relative;
-}
-
-.top-navigation nav ul li a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--accent-color);
 }
 
 @keyframes fadeIn {
@@ -88,10 +48,11 @@
 .contact-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* Was `center`, which centred the form inside the column while the intro text
+     above it stayed left — the two blocks started at different x positions. */
+  align-items: stretch;
   gap: 30px;
   width: 100%;
-  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -124,8 +85,12 @@
 }
 
 .contact-info {
-  margin-top: 3rem;
-  text-align: center;
+  margin-top: 0;
+  /* Was centred, which clashed with the left-aligned "Contact" heading above it
+     and the left-aligned form below. */
+  text-align: left;
+  align-self: flex-start;
+  width: 100%;
   font-size: 1.1rem;
 }
 
@@ -139,12 +104,11 @@
 .contact-info p {
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .contact-form-container {
   width: 100%;
-  max-width: 800px;
 }
 
 .direct-contact {
@@ -196,7 +160,7 @@
 .contact-item:hover {
   border-color: var(--accent-color);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(243, 156, 18, 0.2);
+  box-shadow: 0 8px 25px var(--accent-border);
 }
 
 .contact-icon {
@@ -234,27 +198,24 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 1.75rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
   border-radius: 15px;
-  backdrop-filter: blur(10px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 800px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 1.5rem;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 20px;
 }
 
 .form-group label {
@@ -266,19 +227,25 @@
 .form-group textarea {
   padding: 0.8rem 1rem;
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: inherit;
   font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
   resize: vertical;
 }
 
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: var(--accent-border);
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #00d4ff;
-  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 .form-group input::placeholder,
@@ -296,8 +263,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
-  margin-top: 1rem;
-  align-self: center;
+  margin-top: 0.5rem;
+  align-self: flex-start;
 }
 
 .submit-btn:hover {
@@ -368,58 +335,51 @@
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 3rem 1.5rem;
+    padding: 0;
+    margin-right: 0;
   }
-  
-  .top-navigation {
-    justify-content: center;
-    padding: 1rem 0;
-  }
-  
-  .top-navigation nav ul {
-    gap: 1rem;
-  }
-  
+
   .section-header h1 {
     font-size: 2rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .contact-info {
+    /* Spacing between the intro and the form comes from the column gap alone;
+       these margins used to stack on top of it and left a ~150px hole. */
     display: block;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    padding: 1rem;
+    margin: 0;
+    text-align: left;
+    padding: 0;
   }
-  
+
   .contact-info h2 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
   }
-  
+
   .contact-info p {
     font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 0;
   }
-  
+
   .contact-form {
     padding: 20px;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 1.5rem;
   }
-  
+
   .contact-item {
     padding: 15px;
   }
-  
+
   .contact-icon {
     width: 40px;
     height: 40px;

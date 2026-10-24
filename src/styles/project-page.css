@@ -1,0 +1,74 @@
+/*
+ * Shared shell for every project write-up page.
+ *
+ * `.project-header`, `.project-content`, `.project-section` and their headings
+ * were defined independently in eleven project stylesheets — near-identical
+ * copies of the same design, none of them scoped to a page. Because they all had
+ * the same specificity, whichever stylesheet the bundler happened to emit last
+ * silently won for *every* project page, and the per-project variants (the amber
+ * High Energy Physics header, the blue Robotic Arm one) never rendered at all.
+ *
+ * The canonical design lives here now, and the duplicates are gone. This file is
+ * imported before the per-project stylesheets, so a page can still override a
+ * rule deliberately — the difference is that it now has to say so.
+ */
+
+.project-header {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.project-header h1 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+  text-wrap: balance;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.project-section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent-border);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.project-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.project-section h2::before {
+  content: '▶';
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .project-section {
+    padding: 1.25rem;
+  }
+
+  .project-section h2 {
+    font-size: 1.4rem;
+  }
+}

@@ -32,13 +32,7 @@
   font-style: italic;
 }
 
-.project-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-section {
+.project-detail section {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(6px);
   border-radius: 12px;
@@ -47,7 +41,7 @@ section {
   animation: fadeInUp 0.5s ease-out forwards;
 }
 
-section h2 {
+.project-detail section h2 {
   color: #3fbaff;
   font-size: 1.8rem;
   margin-bottom: 1.25rem;
@@ -55,14 +49,13 @@ section h2 {
   padding-left: 0.75rem;
 }
 
-section p {
+.project-detail section p {
   font-size: 1.1rem;
   color: #dddddd;
   margin-bottom: 1rem;
-  text-align: justify;
 }
 
-section .matrix-container {
+.project-detail section .matrix-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +63,7 @@ section .matrix-container {
   text-align: center;
 }
 
-section table {
+.project-detail section table {
   width: 80%;
   border-collapse: collapse;
   margin: 0 auto;
@@ -78,27 +71,27 @@ section table {
   border: 2px solid rgba(63, 186, 255, 0.5);
 }
 
-section table th,
-section table td {
+.project-detail section table th,
+.project-detail section table td {
   border: 1px solid rgba(63, 186, 255, 0.5);
   padding: 1rem;
   color: #ffffff;
 }
 
-section table th {
+.project-detail section table th {
   background: rgba(63, 186, 255, 0.2);
   font-weight: bold;
 }
 
-section table tbody tr:nth-child(even) {
+.project-detail section table tbody tr:nth-child(even) {
   background: rgba(63, 186, 255, 0.1);
 }
 
-section table tbody tr:nth-child(odd) {
+.project-detail section table tbody tr:nth-child(odd) {
   background: rgba(63, 186, 255, 0.05);
 }
 
-section pre {
+.project-detail section pre {
   background: rgba(63, 186, 255, 0.1);
   border: 1px solid rgba(63, 186, 255, 0.3);
   border-radius: 8px;
@@ -135,8 +128,6 @@ section pre {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .image-container {
   display: flex;
@@ -198,11 +189,11 @@ section pre {
     font-size: 2.2rem;
   }
 
-  section h2 {
+  .project-detail section h2 {
     font-size: 1.5rem;
   }
 
-  section p {
+  .project-detail section p {
     font-size: 1rem;
   }
 }

@@ -1,8 +1,9 @@
 import React from 'react';
-import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa';
+import { FaGraduationCap, FaBriefcase, FaCode, FaDownload } from 'react-icons/fa';
+import SectionNav from '../../SectionNav/SectionNav';
 import './ResumeSection.css';
 
-const ResumeSection = ({ isDarkMode, onNavigate }) => {
+const ResumeSection = ({ onNavigate }) => {
   const education = [
     {
       year: "2020 - 2025",
@@ -18,7 +19,7 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
       position: "Flight Software Engineer",
       company: "The Exploration Company",
       location: "Munich, Germany",
-      description: "Developing flight software for spacecraft systems, focusing on embedded systems programming and real-time software solutions for space exploration missions."
+      description: "Safety critical C++ flight software for Nyx, a modular and reusable spacecraft scheduled to dock to the ISS in 2028. Point of contact in the FSW team for the Propulsion and Sequential subsystems, working directly with propulsion, avionics, and GNC engineers."
     },
     {
       year: "May 2024 - May 2025",
@@ -27,7 +28,7 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
       location: "Toronto, Canada",
       description: (
         <>
-          Conducted research under Dr. Steve Mann, focusing on signal processing and machine learning for EEG data. Published a paper in IEEE ICCE 2025. <a href='https://ieeexplore.ieee.org/document/10929845' target='_blank' rel='noopener noreferrer' className='paper-link'>Read more</a>
+          Built the signal processing pipelines and neural networks used to classify sleep stages from EEG data, under Dr. Steve Mann. Published at IEEE ICCE 2025, where the work received a conference award. <a href='https://ieeexplore.ieee.org/document/10929845' target='_blank' rel='noopener noreferrer' className='paper-link'>Read more</a>
         </>
       )
     },
@@ -36,25 +37,37 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
       position: "Software Engineering Intern",
       company: "Coactum S.A.",
       location: "Vaud, Switzerland",
-      description: "Built scalable frameworks for validation tests, wrote Python mocks for spacecraft sensors, and performed functional tests for various units including IMU and startracker."
+      description: "Extended the validation test framework, wrote Python mocks for spacecraft sensors, and ran functional tests on units including the IMU and star tracker."
     },
     {
-      year: "May 2022 – August 2022",
+      year: "May 2022 - August 2022",
       position: "Software Engineering Intern",
       company: "Coactum S.A.",
       location: "Vaud, Switzerland",
-      description: "Developed the testbench for the onboard flight software (OBSW) from scratch. Designed hardware components, configured SpaceWire boards, and implemented automated validation frameworks."
+      description: "Built the testbench for the onboard flight software (OBSW) from scratch — designed the hardware, configured SpaceWire boards, and implemented the automated validation framework."
     }
   ];
 
   const skillsData = {
-    programmingLanguages: [
-      { name: "Python" },
-      { name: "C++" },
+    // Languages live in here rather than in a category of their own: "C++" on a
+    // list says very little, so it sits next to what it is actually used for.
+    flightSoftware: [
+      { name: "C++ (17/20)" },
       { name: "C" },
-      { name: "MATLAB" },
-      { name: "Bash" },
-      { name: "ARM Assembly" }
+      { name: "ARM Assembly" },
+      { name: "Python" },
+      { name: "Real-time embedded systems" },
+      { name: "RTOS" },
+      { name: "Bare-metal firmware" },
+      { name: "Multi-threading & synchronisation" },
+      { name: "State machines & sequencing" },
+      { name: "FDIR" },
+      { name: "Hardware drivers" },
+      { name: "SpaceWire" },
+      { name: "Hardware-in-the-loop testing" },
+      { name: "Fault injection" },
+      { name: "Bazel" },
+      { name: "GDB (on-target debugging)" }
     ],
     languages: [
       { name: "Portuguese" },
@@ -65,19 +78,14 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
       { name: "Linux" },
       { name: "Git" },
       { name: "Docker" },
-      { name: "TensorFlow" },
       { name: "CI/CD" },
       { name: "Unit/Integration Testing" },
+      { name: "MATLAB" },
+      { name: "Bash" },
       { name: "LaTeX" },
       { name: "ARM Keil MDK" },
-      { name: "Pandas" },
       { name: "STM32/STM32CubeIDE" },
-      { name: "NumPy" },
-      { name: "Scikit-learn" },
-      { name: "RTOS (FreeRTOS)" },
-      { name: "CAN Bus" },
       { name: "Intel Quartus Prime" },
-      { name: "Multi-Threading" },
       { name: "OpenBCI" },
       { name: "MNE-Python" }
     ]
@@ -85,20 +93,18 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
 
   return (
     <div className="resume-section">
-      {/* Top navigation */}
-      <div className="top-navigation">
-        <nav>
-          <ul>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('about'); }}>About</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('resume'); }} className="active">Resume</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('portfolio'); }}>Portfolio</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      
+      <SectionNav activeSection="resume" onNavigate={onNavigate} />
+
       <div className="section-header">
         <h1>Resume</h1>
+        <a
+          className="resume-download"
+          href={`${import.meta.env.BASE_URL}media/resume.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaDownload /> Download PDF
+        </a>
       </div>
       
       <div className="resume-content">
@@ -136,12 +142,12 @@ const ResumeSection = ({ isDarkMode, onNavigate }) => {
 
         <div className="skills-section">
           <h2><FaCode /> Skills</h2>
-          
+
           <div className="skills-categories">
             <div className="skill-category">
-              <h3>Programming Languages</h3>
+              <h3>Flight Software &amp; Embedded</h3>
               <div className="skills-grid">
-                {skillsData.programmingLanguages.map((skill, index) => (
+                {skillsData.flightSoftware.map((skill, index) => (
                   <div key={index} className="skill-item">
                     <span className="skill-name">{skill.name}</span>
                   </div>

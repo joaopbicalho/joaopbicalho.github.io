@@ -1,49 +1,55 @@
 import React from 'react';
+import SectionNav from '../../SectionNav/SectionNav';
 import './AboutSection.css';
 
-const AboutSection = ({ isDarkMode, onNavigate }) => {
+const AboutSection = ({ onNavigate }) => {
   return (
     <div id="about" className="about-section">
-      {/* Navigation using state-based navigation similar to PortfolioSection */}
-      <div className="top-navigation">
-        <nav>
-          <ul>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('about'); }} className="active">About</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('resume'); }}>Resume</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('portfolio'); }}>Portfolio</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      
+      <SectionNav activeSection="about" onNavigate={onNavigate} />
+
       <div className="section-header">
         <h1>About</h1>
       </div>
-      
+
       <div className="about-content">
         <div className="about-text">
           <p>
-            I’m currently a Flight Software Engineer at The Exploration Company, a European aerospace startup developing Nyx, a modular and reusable spacecraft. My work focuses on designing and implementing mission-critical flight software in C++ that interfaces directly with the vehicle’s avionics, propulsion, and guidance systems.
+            I’m a Flight Software Engineer at The Exploration Company in Munich, working on
+            Nyx — a modular, reusable spacecraft scheduled to dock to the ISS in 2028. I write the
+            propulsion flight software and act as the software team’s point of contact for the
+            propulsion and sequential subsystems.
           </p>
 
           <p>
-            I'm an Engineering Physics graduate from the University of Toronto with a passion for fundamental physics, software engineering, EEG and neurotechnology, and space exploration.
-          </p>
-          
-          <p>
-            My academic path included graduate-level courses in General Relativity, Particle Physics, and Computational Physics, alongside minors in Mechatronics, Robotics, and Artificial Intelligence. I developed signal processing pipelines and neural networks to classify sleep stages from EEG data. Research that led to a <a href="https://ieeexplore.ieee.org/document/10929845" target="_blank" rel="noopener noreferrer" className="paper-link">conference paper at ICCCE</a> and earned a conference Award.
-          </p>
-          
-          <p>
-            I completed two internships at Coactum, a Swiss aerospace startup developing an orbital transfer vehicle, where I developed a flight software testbench designing hardware for the HIL setup and writing software emulations for key avionics and sensors.
+            I studied Engineering Physics at the University of Toronto, with minors in
+            Mechatronics, Robotics and Artificial Intelligence, and graduate-level courses in
+            General Relativity, Particle Physics and Computational Physics.
           </p>
 
           <p>
-            I've lived in Italy, Brazil, Costa Rica, Canada, Switzerland, and now Germany. Experiences that have shaped how I approach teamwork, communication, and engineering with a global mindset and open mind. In my free time, I enjoy hiking, surfing, triathlons, and playing guitar.
+            For a year I worked in Dr. Steve Mann’s lab on EEG, building signal processing
+            pipelines and neural networks to classify sleep stages. That work became a{' '}
+            <a
+              href="https://ieeexplore.ieee.org/document/10929845"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="paper-link"
+            >
+              paper at IEEE ICCE 2025
+            </a>{' '}
+            and earned a conference award.
           </p>
 
           <p>
-            I'm driven by curiosity. Whether it's decoding brainwaves, simulating satellites, or understanding the universe at its core.
+            Before that, two internships at Coactum, a Swiss startup building an orbital
+            transfer vehicle. I built their flight software testbench from scratch — the
+            hardware-in-the-loop setup, and software emulations of the avionics and sensors
+            so the onboard software could be tested without the real units.
+          </p>
+
+          <p>
+            I’ve lived in Italy, Brazil, Costa Rica, Canada, Switzerland and now Germany.
+            Outside work I hike, surf, race triathlons and play guitar.
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ import PortfolioSection from '../sections/PortfolioSection/PortfolioSection';
 import './Layout.css';
 
 const Layout = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode] = useState(true);
 
   return (
     <div className={`layout ${isDarkMode ? 'dark' : 'light'}`}>

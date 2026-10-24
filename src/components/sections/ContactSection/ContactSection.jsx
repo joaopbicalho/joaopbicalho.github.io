@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { FaPaperPlane } from 'react-icons/fa';
+import SectionNav from '../../SectionNav/SectionNav';
 import './ContactSection.css';
 
-const ContactSection = ({ isDarkMode, onNavigate }) => {
+const ContactSection = ({ onNavigate }) => {
   const form = useRef();
   const [formStatus, setFormStatus] = useState({
     submitting: false,
@@ -32,56 +33,37 @@ const ContactSection = ({ isDarkMode, onNavigate }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submission started');
     setFormStatus({ submitting: true, submitted: false, error: false });
-
-    // Get form data
-    const formElement = form.current;
-    console.log('Form element:', formElement);
-    console.log('Form data:', formData);
 
     emailjs.sendForm(
       'service_ylapmk8', // Your EmailJS service ID
       'template_n2w53jc', // Your EmailJS template ID
-      formElement,
+      form.current,
       '1Qwax90jgbXArP6na' // Your EmailJS public key
     )
-      .then((result) => {
-        console.log('SUCCESS!', result.status, result.text);
+      .then(() => {
         setFormStatus({ submitting: false, submitted: true, error: false });
         setFormData({ name: '', email: '', subject: '', message: '' });
       })
       .catch((error) => {
-        console.log('FAILED...', error);
-        console.error('Error details:', error.text || error.message || error);
+        console.error('Contact form submission failed:', error.text || error.message || error);
         setFormStatus({ submitting: false, submitted: false, error: true });
       });
   };
 
   return (
     <div className="contact-section">
-      {/* Top navigation */}
-      <div className="top-navigation">
-        <nav>
-          <ul>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('about'); }}>About</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('resume'); }}>Resume</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('portfolio'); }}>Portfolio</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }} className="active">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      
+      <SectionNav activeSection="contact" onNavigate={onNavigate} />
+
       <div className="section-header">
         <h1>Contact</h1>
       </div>
       
       <div className="contact-content">
         <div className="contact-info">
-          <h2>Get In Touch</h2>
           <p>
-            I'm always open to discussing new opportunities and interesting projects, but also love chatting about travel adventures, any of my work, or the places I've lived in. 
-            Feel free to reach out, I'd love to connect and hear your story too!
+            I’m always open to discussing new opportunities and interesting projects, but I also love chatting about travel adventures, any of my work, or the places I’ve lived.
+            Feel free to reach out. I’d love to connect and hear your story too!
           </p>
         </div>
 
@@ -89,7 +71,7 @@ const ContactSection = ({ isDarkMode, onNavigate }) => {
           {formStatus.submitted ? (
             <div className="success-message">
               <h3>Thank you for your message!</h3>
-              <p>I'll get back to you as soon as possible.</p>
+              <p>I’ll get back to you as soon as possible.</p>
               <button 
                 onClick={() => setFormStatus({submitting: false, submitted: false, error: false})}
                 className="send-another-btn"
@@ -99,9 +81,14 @@ const ContactSection = ({ isDarkMode, onNavigate }) => {
             </div>
           ) : (
             <form ref={form} onSubmit={handleSubmit} className="contact-form">
+              {/* The labels are visually hidden: the placeholders carry the
+                  design, but a placeholder is not an accessible name and
+                  disappears as soon as the field has text. */}
               <div className="form-row">
                 <div className="form-group">
+                  <label className="sr-only" htmlFor="contact-name">Your name</label>
                   <input
+                    id="contact-name"
                     type="text"
                     name="name"
                     placeholder="Your Name"
@@ -111,7 +98,9 @@ const ContactSection = ({ isDarkMode, onNavigate }) => {
                   />
                 </div>
                 <div className="form-group">
+                  <label className="sr-only" htmlFor="contact-email">Your email</label>
                   <input
+                    id="contact-email"
                     type="email"
                     name="email"
                     placeholder="Your Email"
@@ -121,9 +110,11 @@ const ContactSection = ({ isDarkMode, onNavigate }) => {
                   />
                 </div>
               </div>
-              
+
               <div className="form-group">
+                <label className="sr-only" htmlFor="contact-subject">Subject</label>
                 <input
+                  id="contact-subject"
                   type="text"
                   name="subject"
                   placeholder="Subject"
@@ -132,9 +123,11 @@ const ContactSection = ({ isDarkMode, onNavigate }) => {
                   required
                 />
               </div>
-              
+
               <div className="form-group">
+                <label className="sr-only" htmlFor="contact-message">Your message</label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   placeholder="Your Message"
                   rows="10"
@@ -155,7 +148,6 @@ const ContactSection = ({ isDarkMode, onNavigate }) => {
               {formStatus.error && (
                 <div className="error-message">
                   <p>Something went wrong. Please try again later or contact me directly at joaopedrobicalho13@gmail.com</p>
-                  <p><small>Check the browser console for more details.</small></p>
                 </div>
               )}
             </form>

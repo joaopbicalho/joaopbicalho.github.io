@@ -32,7 +32,20 @@
 .aerospace-project .overview p {
   font-size: 1.1rem;
   line-height: 1.7;
-  text-align: center;
+  /* Was centred. A six-line paragraph set centred is hard to read: every line
+     starts in a different place, so the eye has to hunt for the next one. */
+  text-align: left;
+  max-width: var(--measure);
+}
+
+/*
+ * `.project-section` is a class shared by every project page, and five other
+ * project stylesheets attach a decorative "▸" to `.project-section h2::before`
+ * without scoping it. That marker leaks in here and collides with this page's
+ * underlined headings, so opt out explicitly.
+ */
+.aerospace-project .project-section h2::before {
+  content: none;
 }
 
 .aerospace-project .expertise-list,
@@ -68,12 +81,14 @@
 }
 
 .aerospace-project .tech-tag {
-  background-color: #162447;
-  color: #00d4ff;
+  /* Was #162447, a navy left over from the old palette — it read as a blue
+     chip on an otherwise black-and-cyan page. */
+  background-color: var(--accent-soft);
+  color: var(--accent-color);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
-  border: 1px solid #00d4ff;
+  border: 1px solid var(--accent-border);
 }
 
 /* Responsive design */
@@ -95,17 +110,20 @@
   .aerospace-project {
     padding: 0;
     margin: 0;
-    max-width: 100vw;
-    width: 100vw;
+    max-width: 100%;
+    width: 100%;
     box-sizing: border-box;
   }
 
-  .project-header h1 {
+  /* These two were missing the .aerospace-project prefix, so below 480px they
+     were restyling the header and content blocks of every other project page
+     too. */
+  .aerospace-project .project-header h1 {
     font-size: 1.8rem;
   }
 
-  .project-section {
-    padding: 1rem 0.25rem;
+  .aerospace-project .project-section {
+    padding: 1rem 0.75rem;
     margin-left: 0;
     margin-right: 0;
     border-radius: 0;

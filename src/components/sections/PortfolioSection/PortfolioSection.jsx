@@ -15,11 +15,34 @@ import ChirpletThesis from '../AdaptiveChirpletTransformProject/AdaptiveChirplet
 import GomokuAIProject from '../GomokuProject/GomokuProject';
 import SemanticSimilarityProject from '../SemanticSimilarityProject/SemanticSimilarityProject';
 import AerospaceProject from '../AerospaceSection/AerospaceProject'; // FIXED: Changed from AerospaceProject to AerospaceSection
+import SectionNav from '../../SectionNav/SectionNav';
+import { formatHash } from '../../../routing';
 import './PortfolioSection.css';
 
-const PortfolioSection = ({ isDarkMode, onNavigate }) => {
+/**
+ * Detail page for each project slug. The slug is also the URL segment
+ * (#/portfolio/<slug>), so every project page is directly linkable.
+ */
+const PROJECT_PAGES = {
+  'gr-project': GRProject,
+  'robotic-arm-project': RoboticArmProject,
+  'robot-control-project': RobotControlProject,
+  'muon-lifetime-project': MuonLifetimeProject,
+  'high-energy-physics-project': HighEnergyPhysicsProject,
+  'superconductor-project': SuperconductorProject,
+  'electron-spin-resonance-project': ElectronSpinResonanceProject,
+  'compton-cross-section-project': ComptonCrossSectionProject,
+  'truthseeker-project': TruthSeekerNet,
+  'muse-headband-reader-project': MuseHeadbandReaderProject,
+  'muse-eeg-project': MuseEEGProject,
+  'adaptive-chirplet-transform-project': ChirpletThesis,
+  'gomoku-project': GomokuAIProject,
+  'semantic-similarity-project': SemanticSimilarityProject,
+  'aerospace-project': AerospaceProject,
+};
+
+const PortfolioSection = ({ onNavigate, selectedProject, onOpenProject, onCloseProject }) => {
   const [filter, setFilter] = useState('all');
-  const [selectedProject, setSelectedProject] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   // Check if viewport is mobile
@@ -38,9 +61,10 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
   const adaptiveChirplet = {
     id: 15,
     title: "Adaptive Chirplet Transform",
+    slug: "adaptive-chirplet-transform-project",
     category: "eeg-bci,ai",
     image: `media/lie_wallpaper.jpg`,
-    description: "Time-frequency decomposition methods for non-stationary signals.",
+    description: "Time-frequency decomposition methods for non-stationary signals",
     technologies: ["Signal Processing", "Chirplet Transform", "EEG Analysis", "Deep Learning"],
     github: "#",
     live: "#"
@@ -49,6 +73,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
   const generalRelativity = {
     id: 8,
     title: "General Relativity Tensor Calculator",
+    slug: "gr-project",
     category: "physics",
     image: `media/general-rel.png`,
     description: "Python code to calculate tensors based on spacetime metrics",
@@ -60,6 +85,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
   const truthSeekerNet = {
     id: 10,
     title: "TruthSeekerNet",
+    slug: "truthseeker-project",
     category: "eeg-bci,ai",
     image: `media/lies.jpeg`,
     description: "EEG-based lie detection system using neural signals",
@@ -71,9 +97,10 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
   const robotControl = {
     id: 2,
     title: "Robot Modelling and Control",
+    slug: "robot-control-project",
     category: "robotics",
     image: "media/robot_control_wp.png",
-    description: "Robot Kinematics, Control, and Motion Planning with the KUKA Robotic Arm",
+    description: "Robot kinematics, control, and motion planning with the KUKA robotic arm",
     technologies: ["MATLAB", "DH Convention", "Control Theory", "Forward and Inverse Kinematics"],
     github: "#",
     live: "#"
@@ -85,6 +112,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
     {
       id: 1,
       title: "Robotic Arm Coin Selector",
+      slug: "robotic-arm-project",
       category: "ai,robotics",
       image: "media/coin_wpp2.png",
       description: "Automated robotic arm system for coin selection and sorting",
@@ -96,6 +124,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
     {
       id: 4,
       title: "Cosmic Ray Muon Lifetime",
+      slug: "muon-lifetime-project",
       category: "physics",
       image: "media/Muon_full3.jpg",
       description: "Experimental measurement of cosmic ray muon decay lifetime",
@@ -106,6 +135,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
     {
       id: 9,
       title: "Measurement of Compton Cross Section",
+      slug: "compton-cross-section-project",
       category: "physics",
       image: "media/Comp.jpg",
       description: "Experimental determination of Compton scattering cross-section",
@@ -116,26 +146,29 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
     {
       id: 7,
       title: "Electron Spin Resonance",
+      slug: "electron-spin-resonance-project",
       category: "physics",
       image: "media/ESR_main.jpg",
       description: "ESR spectroscopy analysis and magnetic field studies",
-      technologies: ["Quantum Mechanics", "Oscilloscope", "Waveguides", "Microwave instrumentation"],
+      technologies: ["Quantum Mechanics", "Oscilloscope", "Waveguides", "Microwave Instrumentation"],
       github: "#",
       live: "#"
     },
     {
       id: 6,
-      title: "High Temperature Super Conductor",
+      title: "High-Temperature Superconductor",
+      slug: "superconductor-project",
       category: "physics",
       image: "media/htck_full.jpg",
       description: "Study of high-temperature superconducting materials",
-      technologies: ["Condensed Matter Physics", "Cryogenics", "Lock In Amplifier"],
+      technologies: ["Condensed Matter Physics", "Cryogenics", "Lock-In Amplifier"],
       github: "#",
       live: "#"
     },
     {
       id: 5,
-      title: "High Energy Physics",
+      title: "High-Energy Physics",
+      slug: "high-energy-physics-project",
       category: "physics",
       image: "media/bubble_chamber.png",
       description: "Analysis of bubble chamber images from pion-proton collisions to identify particle interactions",
@@ -144,19 +177,12 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
       live: "#",
     },
     // EEG/BCI Projects
-    {
-      id: 10,
-      title: "TruthSeekerNet",
-      category: "eeg-bci,ai",
-      image: `media/lies.jpeg`,
-      description: "EEG-based lie detection system using neural signals",
-      technologies: ["Python", "EEG", "Signal Processing", "Machine Learning"],
-      github: "#",
-      live: "#"
-    },
+    // TruthSeekerNet is defined above as `truthSeekerNet`, which the ordered
+    // list below pulls in directly — it is deliberately not repeated here.
     {
       id: 11,
       title: "Muse EEG Real-Time Acquisition",
+      slug: "muse-eeg-project",
       category: "eeg-bci",
       image: "media/muse.jpg",
       description: "Real-time EEG data acquisition and processing from Muse headband via UDP/OSC",
@@ -164,20 +190,13 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
       github: "#",
       live: "#"
     },
-    {
-      id: 15,
-      title: "Adaptive Chirplet Transform",
-      category: "eeg-bci,ai",
-      image: `media/lie_wallpaper.jpg`,
-      description: "Undergraduate thesis:Exploring the potential of ACT as a feature extraction method for EEG.",
-      technologies: ["Signal Processing", "Chirplet Transform", "EEG Analysis", "Deep Learning"],
-      github: "#",
-      live: "#"
-    },
+    // Adaptive Chirplet Transform is defined above as `adaptiveChirplet`, for
+    // the same reason as TruthSeekerNet.
     // AI Projects
         {
       id: 16,
       title: "Semantic Similarity System",
+      slug: "semantic-similarity-project",
       category: "ai",
       image: "media/semantic.png",
       description: "NLP system for vocabulary questions using cosine similarity",
@@ -188,6 +207,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
     {
       id: 13,
       title: "Gomoku",
+      slug: "gomoku-project",
       category: "ai",
       image: "media/gomoku.png",
       description: "AI-powered Gomoku game with intelligent opponent",
@@ -202,25 +222,26 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
     {
       id: 20,
       title: "Flight Software & Aerospace Systems",
+      slug: "aerospace-project",
       category: "aerospace",
       image: "media/aerospace_header.png",  
-      description: "Flight software for Low Earth Orbit (LEO) spacecraft.",
-      technologies: ["Hardware-in-the-Loop Simulation", "Sensor Drivers", "C++"],
+      description: "Flight software at The Exploration Company for Nyx, an ISS cargo delivery spacecraft, and at Coactum for an orbital transfer vehicle",
+      technologies: ["C++", "FDIR", "Hardware Drivers", "Propulsion Flight Software", "Hardware-in-the-Loop Testing", "Aerospace Systems"],
       github: "#",
       live: "#"
     }
   ];
 
-  // Combine projects in the desired order
+  // Combine projects in the desired order. Current work leads.
   let projects = [
-    adaptiveChirplet,    // First
-    generalRelativity,   // Second
-    truthSeekerNet,      // Third
-    robotControl,        // Fourth
+    ...aerospaceProjects,  // First
+    adaptiveChirplet,      // Second
+    generalRelativity,     // Third
+    truthSeekerNet,        // Fourth
+    robotControl,          // Fifth
     ...otherProjects.filter(p => 
       ![adaptiveChirplet.id, generalRelativity.id, truthSeekerNet.id, robotControl.id].includes(p.id)
-    ),
-    ...aerospaceProjects
+    )
   ];
 
   const categories = [
@@ -234,7 +255,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
 
   // Reorder for mobile: move High Energy Physics after Compton Cross Section
   if (isMobile) {
-    const highEnergyIndex = projects.findIndex(p => p.title === "High Energy Physics");
+    const highEnergyIndex = projects.findIndex(p => p.title === "High-Energy Physics");
     const comptonIndex = projects.findIndex(p => p.title === "Measurement of Compton Cross Section");
     
     if (highEnergyIndex !== -1 && comptonIndex !== -1) {
@@ -261,92 +282,34 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
         return filtered;
       })();
 
-  const handleProjectClick = (project) => {
-    switch (project.title) {
-      case "General Relativity Tensor Calculator":
-        setSelectedProject('gr-project');
-        break;
-      case "Robotic Arm Coin Selector":
-        setSelectedProject('robotic-arm-project');
-        break;
-      case "Robot Modelling and Control":
-        setSelectedProject('robot-control-project');
-        break;
-      // case "Trash Compactor":
-      //   setSelectedProject('trash-compactor-project');
-      //   break;
-      case "Muon Lifetime":
-        setSelectedProject('muon-lifetime-project');
-        break;
-      case "High Energy Physics":
-        setSelectedProject('high-energy-physics-project');
-        break;
-      case "High Temperature Super Conductor":
-        setSelectedProject('superconductor-project');
-        break;
-      case "Electron Spin Resonance":
-        setSelectedProject('electron-spin-resonance-project');
-        break;
-      case "Measurement of Compton Cross Section":
-        setSelectedProject('compton-cross-section-project');
-        break;
-      case "TruthSeekerNet":
-        setSelectedProject('truthseeker-project');
-        break;
-      case "Muse EEG Real-Time Acquisition":
-        setSelectedProject('muse-eeg-project');
-        break;
-      case "Adaptive Chirplet Transform":
-        setSelectedProject('adaptive-chirplet-transform-project');
-        break;
-      case "Gomoku":
-        setSelectedProject('gomoku-project');
-        break;
-      case "Semantic Similarity System":
-        setSelectedProject('semantic-similarity-project');
-        break;
-      case "Flight Software & Aerospace Systems": // FIXED: Changed from "Flight Software" to match the title
-        setSelectedProject('aerospace-project');
-        break; // FIXED: Added missing break statement
-      default:
-        setSelectedProject(null);
-        break;
-    }
+  const handleProjectClick = (event, project) => {
+    const isModifiedClick =
+      event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
+    if (isModifiedClick) return;
+
+    event.preventDefault();
+    onOpenProject(project.slug);
   };
 
-  const handleBackClick = () => {
-    setSelectedProject(null);
-  };
+  const ProjectPage = selectedProject ? PROJECT_PAGES[selectedProject] : null;
+  const hasUnknownProject = Boolean(selectedProject) && !ProjectPage;
+
+  // A hand-typed or outdated URL such as #/portfolio/nope should quietly fall
+  // back to the grid rather than render an empty page.
+  useEffect(() => {
+    if (hasUnknownProject) onCloseProject({ replace: true });
+  }, [hasUnknownProject, onCloseProject]);
 
   // If a project is selected, show its detail view
-  if (selectedProject) {
-    const projectComponents = {
-      'gr-project': <GRProject />,
-      'robotic-arm-project': <RoboticArmProject />,
-      'robot-control-project': <RobotControlProject />,
-      // 'trash-compactor-project': <TrashCompactorProject />,
-      'muon-lifetime-project': <MuonLifetimeProject />,
-      'high-energy-physics-project': <HighEnergyPhysicsProject />,
-      'superconductor-project': <SuperconductorProject />,
-      'electron-spin-resonance-project': <ElectronSpinResonanceProject />,
-      'compton-cross-section-project': <ComptonCrossSectionProject />,
-      'truthseeker-project': <TruthSeekerNet />,
-      'muse-headband-reader-project': <MuseHeadbandReaderProject />,
-      'muse-eeg-project': <MuseEEGProject />,
-      'adaptive-chirplet-transform-project': <ChirpletThesis />,
-      'gomoku-project': <GomokuAIProject />,
-      'semantic-similarity-project': <SemanticSimilarityProject />,
-      'aerospace-project': <AerospaceProject />
-    };
-
+  if (ProjectPage) {
     return (
       <div className="portfolio-section">
         <div className="project-detail-header">
-          <button onClick={handleBackClick} className="back-btn">
+          <button onClick={() => onCloseProject()} className="back-btn">
             ← Back to Portfolio
           </button>
         </div>
-        {projectComponents[selectedProject]}
+        <ProjectPage />
       </div>
     );
   }
@@ -354,18 +317,8 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
   // If no project is selected, return the grid view
   return (
     <section id="projects" className="portfolio-section">
-      {/* Top navigation */}
-      <div className="top-navigation">
-        <nav>
-          <ul>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('about'); }}>About</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('resume'); }}>Resume</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('portfolio'); }} className="active">Portfolio</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      
+      <SectionNav activeSection="portfolio" onNavigate={onNavigate} />
+
       <div className="section-header">
         <h1>Portfolio</h1>
       </div>
@@ -384,15 +337,26 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
         </div>
 
         <div className="projects-grid">
-          {filteredProjects.map(project => (
-            <div 
-              key={project.id} 
+          {filteredProjects.map((project, index) => (
+            // A real link, so a card can be focused with the keyboard, opened in
+            // a new tab, and read correctly by assistive technology.
+            <a
+              key={project.id}
               className="project-card"
-              onClick={() => handleProjectClick(project)}
-              style={{ cursor: 'pointer' }}
+              href={formatHash({ section: 'portfolio', project: project.slug })}
+              onClick={(event) => handleProjectClick(event, project)}
             >
               <div className="project-image">
-                <img src={`${import.meta.env.BASE_URL}${project.image}`} alt={project.title} className={project.className || ''} />
+                <img
+                  src={`${import.meta.env.BASE_URL}${project.image}`}
+                  alt={project.title}
+                  className={project.className || ''}
+                  // The grid holds ~14 large images. Only the first row or two
+                  // are ever visible on load; deferring the rest keeps the page
+                  // usable quickly on a phone connection.
+                  loading={index < 4 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
                 <div className="project-overlay">
                   <div className="project-links">
                     {/* GitHub links removed from all project cards */}
@@ -409,7 +373,7 @@ const PortfolioSection = ({ isDarkMode, onNavigate }) => {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

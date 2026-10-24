@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedinIn, FaFileAlt } from 'react-icons/fa';
 import { MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/md';
 import './Sidebar.css';
 
-const Sidebar = ({ isDarkMode }) => {
+const Sidebar = () => {
   const profileImage = `${import.meta.env.BASE_URL}media/me.JPG`;
   
   return (
@@ -11,14 +11,23 @@ const Sidebar = ({ isDarkMode }) => {
       <div className="profile-section">
         <div className="profile-image-container">
           <div className="profile-image">
-            <img src={profileImage} alt="Joao Pedro Bicalho" />
+            {/* Largest element on the landing view, so load it eagerly and give
+                it intrinsic dimensions to keep the card from reflowing. */}
+            <img
+              src={profileImage}
+              alt="João Pedro Bicalho"
+              width="180"
+              height="180"
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
         </div>
         <div className="profile-info">
           <h2>João Pedro Bicalho</h2>
           <div className="title-and-contact-row">
             <div className="title-social-group">
-              <p className="designation">Software Engineer</p>
+              <p className="designation">Flight Software Engineer</p>
               
               {/* Mobile social links under designation */}
               <div className="social-links social-links-mobile">
@@ -38,7 +47,7 @@ const Sidebar = ({ isDarkMode }) => {
               
               {/* Desktop-only email text (no icon) */}
               <div className="email-text-desktop">
-                <a href="mailto:joaopbandrade@gmail.com">joaopedrobicalho13@gmail.com</a>
+                <a href="mailto:joaopedrobicalho13@gmail.com">joaopedrobicalho13@gmail.com</a>
               </div>
               
               {/* Social links for desktop only - mobile moved to profile-image-container */}
@@ -62,19 +71,18 @@ const Sidebar = ({ isDarkMode }) => {
         </div>
       </div>
       
-      {/* Updated contact info with new styling to match reference
-      <div className="contact-info">        
+      {/* Desktop only: .contact-info and .location-desktop are hidden under the
+          mobile breakpoint, where the social row already carries the contacts. */}
+      <div className="contact-info">
         <div className="contact-item-new location-desktop">
           <div className="contact-icon-new">
             <MdOutlineLocationOn />
           </div>
           <div className="contact-details-new">
-            <span>Toronto, CA</span>
+            <span>Munich, Germany</span>
           </div>
         </div>
       </div>
-       */}
-
     </div>
   );
 };
